@@ -1,303 +1,1158 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    body {background-color: #0b0d10}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #25cae9; min-height: 13.0px}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #161924}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #f9b31d; min-height: 13.0px}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #31cd87; min-height: 13.0px}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #161924}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #25cae9; min-height: 15.0px}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #111319}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #f9b31d; min-height: 15.0px}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #ee57a7; min-height: 15.0px}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #31cd87; min-height: 15.0px}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #f55d14; min-height: 15.0px}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #2f69f3; min-height: 15.0px}
-    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #9571f8; min-height: 15.0px}
-    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97; background-color: #526078; min-height: 15.0px}
-    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97}
-    p.p20 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97}
-    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #2f69f3; -webkit-text-stroke: #2f69f3}
-    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #000000; background-color: #2f69f3}
-    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px '.Apple Color Emoji UI'; color: #ee57a7; -webkit-text-stroke: #ee57a7}
-    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #ee57a7; -webkit-text-stroke: #ee57a7}
-    p.p28 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.5px 'Helvetica Neue'; color: #757f97; -webkit-text-stroke: #757f97}
-    p.p29 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px '.Apple Color Emoji UI'; color: #25cae9; -webkit-text-stroke: #25cae9}
-    p.p30 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #25cae9; -webkit-text-stroke: #25cae9}
-    p.p31 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #485165; -webkit-text-stroke: #485165}
-    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #485165; -webkit-text-stroke: #485165}
-    p.p33 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #31cd87; -webkit-text-stroke: #31cd87}
-    p.p34 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #000000; background-color: #31cd87}
-    p.p35 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #f9b31d; -webkit-text-stroke: #f9b31d}
-    p.p36 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #000000; background-color: #f9b31d}
-    p.p37 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px '.Apple Color Emoji UI'; color: #f9b31d; -webkit-text-stroke: #f9b31d}
-    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #f9b31d; -webkit-text-stroke: #f9b31d}
-    p.p39 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #485165; -webkit-text-stroke: #485165; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.051)}
-    p.p40 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Lucida Grande'; color: #485165; -webkit-text-stroke: #485165}
-    p.p41 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #f55d14; -webkit-text-stroke: #f55d14}
-    p.p42 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #000000; background-color: #f55d14}
-    p.p43 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #9571f8; -webkit-text-stroke: #9571f8}
-    p.p44 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #000000; background-color: #9571f8}
-    p.p45 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px '.Apple Color Emoji UI'; color: #31cd87; -webkit-text-stroke: #31cd87}
-    p.p46 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #31cd87; -webkit-text-stroke: #31cd87}
-    p.p47 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #526078; -webkit-text-stroke: #526078}
-    p.p48 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #526078}
-    p.p49 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px '.Apple Color Emoji UI'; color: #f55d14; -webkit-text-stroke: #f55d14}
-    p.p50 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #f55d14; -webkit-text-stroke: #f55d14}
-    span.s1 {font: 28.0px '.Apple Color Emoji UI'; font-kerning: none}
-    span.s2 {font-kerning: none}
-    span.s3 {font-kerning: none; background-color: #161924}
-    span.s4 {font: 13.0px '.Apple Color Emoji UI'; font-kerning: none}
-    span.s5 {font-kerning: none; background-color: #111319}
-    span.s6 {font-kerning: none; background-color: rgba(47, 105, 243, 0.15)}
-    span.s7 {font-kerning: none; color: #dbe2ec; background-color: #111319; -webkit-text-stroke: 0px #dbe2ec}
-    span.s8 {font-kerning: none; background-color: rgba(49, 205, 135, 0.15)}
-    span.s9 {font: 11.5px Menlo; font-kerning: none; background-color: #111319}
-    span.s10 {font-kerning: none; background-color: rgba(249, 179, 29, 0.15)}
-    span.s11 {font-kerning: none; background-color: rgba(245, 93, 20, 0.15)}
-    span.s12 {font-kerning: none; background-color: rgba(149, 113, 248, 0.15)}
-    span.s13 {font-kerning: none; background-color: rgba(82, 96, 120, 0.15)}
-    span.s14 {font-kerning: none; background-color: rgba(245, 93, 20, 0.12)}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Study — Zendesk Ticket Lifecycle</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0f14;
+    --surface: #151921;
+    --surface2: #1c2230;
+    --border: #2a3142;
+    --text: #e2e8f0;
+    --text-dim: #8892a8;
+    --text-muted: #5a6478;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #22d3ee;
+    --accent-green: #34d399;
+    --accent-amber: #fbbf24;
+    --accent-orange: #f97316;
+    --accent-rose: #f43f5e;
+    --accent-purple: #a78bfa;
+    --accent-pink: #f472b6;
+    --new: #3b82f6;
+    --open: #34d399;
+    --pending: #fbbf24;
+    --hold: #f97316;
+    --solved: #a78bfa;
+    --closed: #64748b;
+    --glow-blue: rgba(59,130,246,0.15);
+    --glow-green: rgba(52,211,153,0.15);
+    --glow-amber: rgba(251,191,36,0.15);
+    --glow-orange: rgba(249,115,22,0.15);
+    --glow-purple: rgba(167,139,250,0.15);
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    padding: 40px 48px 32px;
+    background: linear-gradient(180deg, rgba(59,130,246,0.06) 0%, transparent 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-green), var(--accent-amber), var(--accent-purple));
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+  .badge .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ---- LEGEND ---- */
+  .legend-bar {
+    display: flex;
+    gap: 20px;
+    padding: 16px 48px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-dim);
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .legend-item:hover { background: var(--surface2); }
+  .legend-item .swatch {
+    width: 10px; height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ---- NAV TABS ---- */
+  .tab-bar {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dim);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+  .tab:hover {
+    background: rgba(59,130,246,0.12);
+    border-color: rgba(59,130,246,0.4);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+  }
+  .tab.active {
+    background: linear-gradient(135deg, var(--accent-blue), #6366f1);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(59,130,246,0.3);
+  }
+
+  /* ---- MAIN CONTENT ---- */
+  .content { padding: 32px 48px 64px; }
+
+  /* ---- SECTION ---- */
+  .section {
+    display: none;
+    animation: fadeIn 0.35s ease;
+  }
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .section-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  /* ---- FLOW DIAGRAM ---- */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .flow-stage {
+    position: relative;
+    padding-left: 68px;
+    padding-bottom: 8px;
+  }
+
+  .flow-stage::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .flow-stage:last-child::before { display: none; }
+
+  .stage-icon {
+    position: absolute;
+    left: 4px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 2;
+    border: 2px solid;
+  }
+
+  .stage-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .stage-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .stage-header .status-pill {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 3px 10px;
+    border-radius: 5px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    transition: all 0.25s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+  }
+
+  .card-type {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .card-type .icon { font-size: 12px; }
+
+  .card h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .card-detail {
+    font-size: 11.5px;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+  .card-detail strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .card-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Card accent colors */
+  .card.trigger::before { background: var(--accent-cyan); }
+  .card.trigger .card-type { color: var(--accent-cyan); }
+
+  .card.automation::before { background: var(--accent-amber); }
+  .card.automation .card-type { color: var(--accent-amber); }
+
+  .card.genai::before { background: var(--accent-pink); }
+  .card.genai .card-type { color: var(--accent-pink); }
+
+  .card.csat::before { background: var(--accent-green); }
+  .card.csat .card-type { color: var(--accent-green); }
+
+  .card.task::before { background: var(--accent-orange); }
+  .card.task .card-type { color: var(--accent-orange); }
+
+  /* ---- CONNECTOR ARROWS ---- */
+  .connector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0 6px 68px;
+    font-size: 11px;
+    color: var(--text-muted);
+    position: relative;
+  }
+  .connector .arrow {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* ---- SUMMARY STATS ---- */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .stat-card .num {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-card .label {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  /* ---- TIMELINE ---- */
+  .timeline-row {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    margin: 24px 0;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .timeline-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(0,0,0,0.7);
+    position: relative;
+    transition: all 0.3s;
+    cursor: default;
+    min-width: 32px;
+  }
+  .timeline-seg:hover {
+    filter: brightness(1.15);
+  }
+  .timeline-seg .tip {
+    display: none;
+    position: absolute;
+    top: -40px;
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .timeline-seg:hover .tip { display: block; }
+
+  /* ---- TABLE ---- */
+  .rules-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .rules-table th {
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+  .rules-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+  .rules-table tr:hover td {
+    background: var(--surface);
+  }
+  .rules-table .type-badge {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .rules-table .type-badge.trigger {
+    background: rgba(34,211,238,0.12);
+    color: var(--accent-cyan);
+  }
+  .rules-table .type-badge.automation {
+    background: rgba(251,191,36,0.12);
+    color: var(--accent-amber);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    .header, .content, .legend-bar { padding-left: 20px; padding-right: 20px; }
+    .header-top { flex-direction: column; align-items: flex-start; }
+    .tab-bar { width: 100%; margin-top: 16px; }
+    .flow-stage { padding-left: 52px; }
+    .connector { padding-left: 52px; }
+    .flow-stage::before { left: 18px; }
+    .stage-icon { left: 0; width: 36px; height: 36px; font-size: 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 22px; }
+  }
+
+  /* Print-friendly */
+  @media print {
+    body { background: #fff; color: #111; }
+    .card { border: 1px solid #ddd; background: #f9f9fb; }
+    .header::before { display: none; }
+    .tab-bar { display: none; }
+    .section { display: block !important; page-break-inside: avoid; margin-bottom: 24px; }
+  }
+</style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 28.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s1">⚙️</span><span class="s2"> Time Study — Zendesk Ticket Lifecycle</span></h1>
-<p class="p2"><span class="s2">Complete workflow map of triggers, automations, and the ticket journey from creation to close</span></p>
-<p class="p3"><span class="s2"></span><br></p>
-<p class="p4"><span class="s2">14 TRIGGERS</span></p>
-<p class="p5"><span class="s2"></span><br></p>
-<p class="p4"><span class="s2">16 AUTOMATIONS</span></p>
-<p class="p6"><span class="s2"></span><br></p>
-<p class="p7"><span class="s3">ALL ACTIVE</span></p>
-<p class="p8"><span class="s4">🔄</span><span class="s2"> Full Lifecycle</span></p>
-<p class="p9"><span class="s4">📊</span><span class="s2"> Overview</span></p>
-<p class="p9"><span class="s4">⚡</span><span class="s2"> All Triggers</span></p>
-<p class="p9"><span class="s4">⏱️</span><span class="s2"> All Automations</span></p>
-<p class="p10"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">Trigger (fires on event)</span></p>
-<p class="p12"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">Automation (time-based)</span></p>
-<p class="p13"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">GenAI Autoreply</span></p>
-<p class="p14"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">CSAT / Feedback</span></p>
-<p class="p15"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">Task Management</span></p>
-<p class="p16"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">New</span></p>
-<p class="p14"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">Open</span></p>
-<p class="p12"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">Pending</span></p>
-<p class="p15"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">On Hold</span></p>
-<p class="p17"><span class="s2"></span><br></p>
-<p class="p11"><span class="s2">Solved</span></p>
-<p class="p18"><span class="s2"></span><br></p>
-<p class="p19"><span class="s5">Closed</span></p>
-<p class="p20"><span class="s2">Ticket Lifecycle — End to End</span></p>
-<p class="p21"><span class="s2">Walk through every stage of a ticket's life, from the moment it's created to final closure. Each card shows what fires, when, and what it does.</span></p>
-<p class="p22"><span class="s6">📩</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s2">Stage 1 — Ticket Created</span></h3>
-<p class="p24"><span class="s2">NEW</span></p>
-<p class="p25"><span class="s5">🤖</span></p>
-<p class="p26"><span class="s5">GENAI TRIGGER — FIRES ON CREATE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Generative Reply for AI Agent "Time Study Virtual Support"</span></h4>
-<p class="p28"><span class="s5">When an </span><span class="s7">end-user</span><span class="s5"> submits a ticket via email, web form, or API, the AI agent sends an </span><span class="s7">immediate auto-reply</span><span class="s5"> with suggested help center articles. Sets type to </span><span class="s7">Question</span><span class="s5">, priority to </span><span class="s7">Normal</span><span class="s5">, and a custom awaiting-reply status.</span></p>
-<p class="p28"><span class="s7">Channels:</span><span class="s5"> Email to support@timestudy.co, web form, API</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON CREATE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Requester of Proactive Ticket</span></h4>
-<p class="p28"><span class="s5">When an </span><span class="s7">agent creates a ticket on behalf of a user</span><span class="s5"> (proactive outreach), the requester is notified by email with the ticket details and a link.</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON CREATE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify All Agents of Received Request</span></h4>
-<p class="p28"><span class="s5">Sends a </span><span class="s7">group notification to Tier 1</span><span class="s5"> agents whenever any new ticket is created, so nothing falls through the cracks.</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">Agent picks up ticket → assigns → works the issue</span></p>
-<p class="p33"><span class="s8">🔧</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s2">Stage 2 — Working the Ticket</span></h3>
-<p class="p34"><span class="s2">OPEN</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON ASSIGNMENT CHANGE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Assignee of Assignment</span></h4>
-<p class="p28"><span class="s5">When a ticket is </span><span class="s7">reassigned</span><span class="s5"> to a different agent (not self-assigned), the new assignee gets an email with full ticket context, comments, and CCs.</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON GROUP CHANGE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Group of Assignment (excl. Tech Team)</span></h4>
-<p class="p28"><span class="s5">When a ticket is assigned to a </span><span class="s7">group with no specific agent</span><span class="s5">, all group members are notified — except the Tech Team group, which has its own trigger.</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON GROUP CHANGE OR UPDATE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Tech Team (Light Agents) of Assignment</span></h4>
-<p class="p28"><span class="s5">Special notification for the </span><span class="s7">Tech Team group (light agents)</span><span class="s5"> with instructions about their limited permissions — they can only add internal notes, not public replies.</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON ANY PUBLIC COMMENT</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Requester &amp; CCs of Comment Update</span></h4>
-<p class="p28"><span class="s5">Whenever </span><span class="s7">any public comment</span><span class="s5"> is added, the requester and all CCs receive an email with the latest comment and a CSAT rating link. </span><span class="s7">Highest-traffic trigger.</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON ANY COMMENT</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Assignee of Comment Update</span></h4>
-<p class="p28"><span class="s5">When </span><span class="s7">anyone other than the assignee</span><span class="s5"> adds a comment (public or internal), the assignee is notified with full context. Ensures agents don't miss customer replies.</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON SIDE CONVERSATION</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Side Conversation Replies → Set Ticket to Open</span></h4>
-<p class="p28"><span class="s5">When a </span><span class="s7">side conversation</span><span class="s5"> is created, replied to, or reopened, the parent ticket is set back to </span><span class="s7">Open</span><span class="s5"> and a specific agent is notified. Ensures side convos don't get lost.</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON CUSTOM STATUS CHANGE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">"Solved — In Client Admin Hands Now"</span></h4>
-<p class="p28"><span class="s5">When ticket is set to the custom status </span><span class="s7">"Solved - in client admin hands now"</span><span class="s5">, it auto-tags with </span><span class="s9">refer_to_system_admin</span><span class="s5">. This routes to a special solve notification path later.</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">Agent replies → ticket moves to Pending (awaiting customer) or On Hold (waiting on 3rd party)</span></p>
-<p class="p35"><span class="s10">⏳</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s2">Stage 3 — Awaiting Customer Response</span></h3>
-<p class="p36"><span class="s2">PENDING</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — AFTER 2 BIZ DAYS PENDING</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Remind Requester: Pending Ticket Awaiting Response (Bump 1)</span></h4>
-<p class="p28"><span class="s5">If a </span><span class="s7">standard ticket</span><span class="s5"> (not enhancement/workaround) has been pending for </span><span class="s7">20 biz hours (~2 days)</span><span class="s5"> with no response, sends a gentle reminder. Warns that ticket will close in 2 more biz days. Adds tag </span><span class="s9">bump1</span><span class="s5">.</span></p>
-<p class="p28"><span class="s7">Skips:</span><span class="s5"> tickets already bumped, tagged </span><span class="s9">dont_bump</span><span class="s5">, or enhancement workarounds.</span></p>
-<p class="p39"><span class="s2">+ bump1</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — AFTER 10 BIZ DAYS PENDING (ENHANCEMENTS)</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Enhancement / Workaround Provided: Pending Reminder</span></h4>
-<p class="p28"><span class="s5">For </span><span class="s7">enhancement requests with a workaround provided</span><span class="s5">, waits a longer </span><span class="s7">88 biz hours (~10 days)</span><span class="s5"> before sending a bump. Gives customer time to evaluate the workaround.</span></p>
-<p class="p39"><span class="s2">+ bump1</span></p>
-<p class="p25"><span class="s5">🤖</span></p>
-<p class="p26"><span class="s5">GENAI AUTOMATION — AFTER 24H PENDING</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">[GenAI] Bump on Autoreply</span></h4>
-<p class="p28"><span class="s5">For tickets where the </span><span class="s7">AI agent auto-replied</span><span class="s5"> (tagged </span><span class="s9">ar_suggest_true</span><span class="s5">), sends a follow-up bump after </span><span class="s7">24 hours</span><span class="s5"> asking if they've reviewed the response. Re-sets to Pending.</span></p>
-<p class="p39"><span class="s2">+ bump_on_email_generative_reply</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">Still no response after bump…</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — AFTER 4 BIZ DAYS TOTAL PENDING</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Auto-Solve: Standard Pending Tickets (4 Days No Response)</span></h4>
-<p class="p28"><span class="s5">If a standard ticket has </span><span class="s7">bump1</span><span class="s5"> tag AND has been pending </span><span class="s7">40 biz hours total</span><span class="s5"> with no reply, automatically sets status to </span><span class="s7">Solved</span><span class="s5">. The bump served as the final warning.</span></p>
-<p class="p39"><span class="s2">→ status: solved</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — AFTER 12 BIZ DAYS TOTAL (ENHANCEMENTS)</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Auto-Solve: Enhancement Workarounds (No Response)</span></h4>
-<p class="p28"><span class="s5">Enhancement tickets with </span><span class="s7">workaround provided</span><span class="s5"> that have been pending </span><span class="s7">110+ hours</span><span class="s5"> with bump1 and no reply are automatically </span><span class="s7">Solved</span><span class="s5">.</span></p>
-<p class="p39"><span class="s2">→ status: solved</span></p>
-<p class="p25"><span class="s5">🤖</span></p>
-<p class="p26"><span class="s5">GENAI AUTOMATION — AFTER 48H TOTAL</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">[GenAI] Auto-Solve on Autoreply</span></h4>
-<p class="p28"><span class="s5">GenAI-replied tickets that were bumped and still have </span><span class="s7">no response after 48 total hours</span><span class="s5"> are auto-solved with a friendly close message letting the customer know they can reply to reopen.</span></p>
-<p class="p39"><span class="s2">+ solved_on_email_generative_reply</span></p>
-<p class="p39"><span class="s2">→ status: solved</span></p>
-<p class="p40"><span class="s2">↩</span></p>
-<p class="p32"><span class="s2">If customer replies, ticket reopens</span></p>
-<p class="p29"><span class="s5">⚡</span></p>
-<p class="p30"><span class="s5">TRIGGER — FIRES ON REOPEN + AGENT REPLY</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Remove Bump1 Tag on Reopen</span></h4>
-<p class="p28"><span class="s5">When a pending ticket </span><span class="s7">reopens and an agent makes a public reply</span><span class="s5">, the </span><span class="s9">bump1</span><span class="s5"> tag is removed. This resets the bump cycle so the customer gets a fresh reminder window if the ticket goes pending again.</span></p>
-<p class="p39"><span class="s2">- bump1</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">Or ticket may go On Hold waiting for a third party…</span></p>
-<p class="p41"><span class="s11">⏸️</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s2">Stage 3b — On Hold (Waiting on Third Party)</span></h3>
-<p class="p42"><span class="s2">ON HOLD</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — AFTER 5 CALENDAR DAYS ON HOLD</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Re-Open On-Hold Ticket Before SLA Breach</span></h4>
-<p class="p28"><span class="s5">Tickets on hold for </span><span class="s7">120+ hours (5 days)</span><span class="s5"> are automatically moved to </span><span class="s7">Open</span><span class="s5"> to prevent SLA breaches. The assignee gets a detailed email with next-step instructions.</span></p>
-<p class="p28"><span class="s7">Exceptions:</span><span class="s5"> Tickets tagged </span><span class="s9">stay_on_hold</span><span class="s5"> or in specific custom statuses (Suggestion, etc.) are excluded.</span></p>
-<p class="p39"><span class="s2">→ status: open</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">Issue resolved → Agent marks Solved</span></p>
-<p class="p43"><span class="s12">✅</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s2">Stage 4 — Solved</span></h3>
-<p class="p44"><span class="s2">SOLVED</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — 4 BIZ HOURS AFTER SOLVED</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Requester of Resolution (Standard Path)</span></h4>
-<p class="p28"><span class="s7">4 business hours</span><span class="s5"> after a ticket is solved, the requester gets a resolution email with a CSAT rating link. Excludes tickets escalated to system admin, AnswerBot resolved, or tagged </span><span class="s9">no_solve_notice</span><span class="s5">.</span></p>
-<p class="p39"><span class="s2">+ resolved_sent</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — 20 HOURS AFTER SOLVED</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Notify Requester of Resolution (System Admin Escalation)</span></h4>
-<p class="p28"><span class="s5">Tickets tagged </span><span class="s9">refer_to_system_admin</span><span class="s5"> get a </span><span class="s7">different, delayed resolution email</span><span class="s5"> after 20 hours. The message references the system admin escalation and encourages follow-up if unresolved.</span></p>
-<p class="p39"><span class="s2">+ resolved_sent</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — 2 HOURS AFTER SOLVED</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">AnswerBot Resolved — Reply if Need More Help</span></h4>
-<p class="p28"><span class="s5">For tickets where the customer marked an </span><span class="s7">AnswerBot article as helpful</span><span class="s5"> (tagged </span><span class="s9">ar_marked_helpful</span><span class="s5">), a follow-up is sent after 2 hours saying "if you still need help, just reply."</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">CSAT collection begins…</span></p>
-<p class="p45"><span class="s5">⭐</span></p>
-<p class="p46"><span class="s5">AUTOMATION — 24 HOURS AFTER SOLVED</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Request Customer Satisfaction Rating (Legacy)</span></h4>
-<p class="p28"><span class="s5">The original CSAT automation. </span><span class="s7">24 hours</span><span class="s5"> after solve, sends a rating request. Excludes tickets tagged </span><span class="s9">no_csat</span><span class="s5">, </span><span class="s9">ab_resolved</span><span class="s5">, or already sent.</span></p>
-<p class="p39"><span class="s2">+ sent_csat_email</span></p>
-<p class="p45"><span class="s5">⭐</span></p>
-<p class="p46"><span class="s5">AUTOMATION — 24 HOURS AFTER SOLVED</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Request Customer Satisfaction Rating (System / New)</span></h4>
-<p class="p28"><span class="s5">Newer system CSAT automation. Fires at </span><span class="s7">24 hours</span><span class="s5"> post-solve for public tickets where CSAT hasn't been offered. Excludes </span><span class="s9">ar_marked_helpful</span><span class="s5"> and </span><span class="s9">no_csat</span><span class="s5"> tags.</span></p>
-<p class="p45"><span class="s5">⭐</span></p>
-<p class="p46"><span class="s5">TRIGGER — FIRES ON MESSAGING SOLVE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">CSAT for Messaging Channel</span></h4>
-<p class="p28"><span class="s5">When a </span><span class="s7">messaging ticket</span><span class="s5"> (via_id 75) is solved and CSAT hasn't been offered, immediately sends the messaging-native satisfaction survey.</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">If rating is bad…</span></p>
-<p class="p45"><span class="s5">🔔</span></p>
-<p class="p46"><span class="s5">TRIGGER — FIRES ON BAD RATING</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Bad Rating Notification</span></h4>
-<p class="p28"><span class="s5">When a customer gives a </span><span class="s7">"Bad, I'm Unsatisfied"</span><span class="s5"> rating, alerts are sent to the </span><span class="s7">manager, assignee, and all Tier 1 agents</span><span class="s5">. Ticket is reopened, priority set to </span><span class="s7">High</span><span class="s5">, tagged </span><span class="s9">csat_followup</span><span class="s5">.</span></p>
-<p class="p39"><span class="s2">+ csat_followup</span></p>
-<p class="p39"><span class="s2">→ status: open</span></p>
-<p class="p39"><span class="s2">→ priority: high</span></p>
-<p class="p45"><span class="s5">⏱️</span></p>
-<p class="p46"><span class="s5">AUTOMATION — AFTER FOLLOW-UP ON BAD RATING</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Request to Change a Bad Rating</span></h4>
-<p class="p28"><span class="s5">After a bad rating is addressed (tagged </span><span class="s9">bad_rating1</span><span class="s5">), a follow-up email invites the customer to </span><span class="s7">re-rate their experience</span><span class="s5"> if things have improved.</span></p>
-<p class="p39"><span class="s2">+ chg_bad_rating</span></p>
-<p class="p31"><span class="s2">↓</span></p>
-<p class="p32"><span class="s2">After grace period with no reply, ticket auto-closes</span></p>
-<p class="p47"><span class="s13">🔒</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s2">Stage 5 — Closed</span></h3>
-<p class="p48"><span class="s2">CLOSED</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — 5 DAYS AFTER SOLVED</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Close Ticket 5 Days After Solved (Standard)</span></h4>
-<p class="p28"><span class="s5">All solved tickets are automatically </span><span class="s7">closed after 120 hours (5 days)</span><span class="s5">. This is the default closure path for most tickets. </span><span class="s7">Highest-volume automation.</span></p>
-<p class="p39"><span class="s2">→ status: closed</span></p>
-<p class="p37"><span class="s5">⏱️</span></p>
-<p class="p38"><span class="s5">AUTOMATION — 1 BIZ DAY AFTER SOLVED</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Close Chat Ticket 1 Biz Day After Solved</span></h4>
-<p class="p28"><span class="s5">Chat/messaging tickets (tagged </span><span class="s9">chat_close</span><span class="s5">) close faster — just </span><span class="s7">8 biz hours (1 day)</span><span class="s5"> after solved, since these are typically quick interactions.</span></p>
-<p class="p39"><span class="s2">→ status: closed</span></p>
-<p class="p41"><span class="s14">📋</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #dbe2ec; -webkit-text-stroke: #dbe2ec"><span class="s2">Parallel Track — Internal Task Management</span></h3>
-<p class="p42"><span class="s2">TASKS</span></p>
-<p class="p49"><span class="s5">📋</span></p>
-<p class="p50"><span class="s5">AUTOMATION — 3 HOURS AFTER NEW TASK</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Task Needs Due Date</span></h4>
-<p class="p28"><span class="s5">When a ticket is set to type </span><span class="s7">Task</span><span class="s5"> but </span><span class="s7">no due date</span><span class="s5"> is set within 3 hours, the assignee is reminded to set one.</span></p>
-<p class="p49"><span class="s5">📋</span></p>
-<p class="p50"><span class="s5">TRIGGER — FIRES ON DUE DATE SET</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Add Tag for Task Due Date Set</span></h4>
-<p class="p28"><span class="s5">When a task type ticket gets a </span><span class="s7">due date added</span><span class="s5">, the tag </span><span class="s9">due_date_set</span><span class="s5"> is applied to stop the "needs due date" reminder.</span></p>
-<p class="p39"><span class="s2">+ due_date_set</span></p>
-<p class="p49"><span class="s5">⏱️</span></p>
-<p class="p50"><span class="s5">AUTOMATION — 1 BIZ DAY BEFORE DUE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Alert: Tasks Due Within 1 Business Day</span></h4>
-<p class="p28"><span class="s5">Sends a </span><span class="s7">reminder</span><span class="s5"> to the assignee when a task's due date is </span><span class="s7">less than 4 biz hours away</span><span class="s5">. Tagged </span><span class="s9">t_reminder1</span><span class="s5"> to prevent duplicates.</span></p>
-<p class="p39"><span class="s2">+ t_reminder1</span></p>
-<p class="p49"><span class="s5">⏱️</span></p>
-<p class="p50"><span class="s5">AUTOMATION — DAY OF DUE DATE</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s5">Alert: Tasks Due Today</span></h4>
-<p class="p28"><span class="s5">Fires on the </span><span class="s7">day a task is due</span><span class="s5"> (within 24 hours of due date). Sends a more urgent reminder with instructions to close or create follow-up tickets.</span></p>
-<p class="p39"><span class="s2">+ t_reminder2</span></p>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>⚙️ Time Study — Zendesk Ticket Lifecycle</h1>
+      <p>Complete workflow map of triggers, automations, and the ticket journey from creation to close</p>
+      <div class="badge-row" style="margin-top:10px;">
+        <span class="badge"><span class="dot" style="background:var(--accent-cyan)"></span> 14 Triggers</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-amber)"></span> 16 Automations</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-green)"></span> All Active</span>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <button class="tab active" onclick="showTab('lifecycle')">🔄 Full Lifecycle</button>
+      <button class="tab" onclick="showTab('overview')">📊 Overview</button>
+      <button class="tab" onclick="showTab('triggers')">⚡ All Triggers</button>
+      <button class="tab" onclick="showTab('automations')">⏱️ All Automations</button>
+    </div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-bar">
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-cyan)"></span> Trigger (fires on event)</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-amber)"></span> Automation (time-based)</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-pink)"></span> GenAI Autoreply</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-green)"></span> CSAT / Feedback</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-orange)"></span> Task Management</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--new)"></span> New</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--open)"></span> Open</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--pending)"></span> Pending</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--hold)"></span> On Hold</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--solved)"></span> Solved</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--closed)"></span> Closed</div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- TAB: FULL LIFECYCLE -->
+<!-- ============================================================ -->
+<div class="content">
+<div class="section active" id="lifecycle">
+  <div class="section-title">Ticket Lifecycle — End to End</div>
+  <div class="section-desc">Walk through every stage of a ticket's life, from the moment it's created to final closure. Each card shows what fires, when, and what it does.</div>
+
+  <div class="flow">
+
+    <!-- ===== STAGE 1: TICKET CREATION (NEW) ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-blue); border-color:var(--new); color:var(--new);">📩</div>
+      <div class="stage-header">
+        <h3>Stage 1 — Ticket Created</h3>
+        <span class="status-pill" style="background:var(--new); color:#000;">NEW</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card genai">
+          <div class="card-type"><span class="icon">🤖</span> GenAI Trigger — fires on create</div>
+          <h4>Generative Reply for AI Agent "Time Study Virtual Support"</h4>
+          <div class="card-detail">
+            When an <strong>end-user</strong> submits a ticket via email, web form, or API, the AI agent sends an <strong>immediate auto-reply</strong> with suggested help center articles. Sets type to <strong>Question</strong>, priority to <strong>Normal</strong>, and a custom awaiting-reply status.
+          </div>
+          <div class="card-detail" style="margin-top:6px;">
+            <strong>Channels:</strong> Email to support@timestudy.co, web form, API
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on create</div>
+          <h4>Notify Requester of Proactive Ticket</h4>
+          <div class="card-detail">
+            When an <strong>agent creates a ticket on behalf of a user</strong> (proactive outreach), the requester is notified by email with the ticket details and a link.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on create</div>
+          <h4>Notify All Agents of Received Request</h4>
+          <div class="card-detail">
+            Sends a <strong>group notification to Tier 1</strong> agents whenever any new ticket is created, so nothing falls through the cracks.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Agent picks up ticket → assigns → works the issue</div>
+
+    <!-- ===== STAGE 2: OPEN / IN PROGRESS ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-green); border-color:var(--open); color:var(--open);">🔧</div>
+      <div class="stage-header">
+        <h3>Stage 2 — Working the Ticket</h3>
+        <span class="status-pill" style="background:var(--open); color:#000;">OPEN</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on assignment change</div>
+          <h4>Notify Assignee of Assignment</h4>
+          <div class="card-detail">
+            When a ticket is <strong>reassigned</strong> to a different agent (not self-assigned), the new assignee gets an email with full ticket context, comments, and CCs.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on group change</div>
+          <h4>Notify Group of Assignment (excl. Tech Team)</h4>
+          <div class="card-detail">
+            When a ticket is assigned to a <strong>group with no specific agent</strong>, all group members are notified — <em>except</em> the Tech Team group, which has its own trigger.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on group change or update</div>
+          <h4>Notify Tech Team (Light Agents) of Assignment</h4>
+          <div class="card-detail">
+            Special notification for the <strong>Tech Team group (light agents)</strong> with instructions about their limited permissions — they can only add internal notes, not public replies.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on any public comment</div>
+          <h4>Notify Requester & CCs of Comment Update</h4>
+          <div class="card-detail">
+            Whenever <strong>any public comment</strong> is added, the requester and all CCs receive an email with the latest comment and a CSAT rating link. <strong>Highest-traffic trigger.</strong>
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on any comment</div>
+          <h4>Notify Assignee of Comment Update</h4>
+          <div class="card-detail">
+            When <strong>anyone other than the assignee</strong> adds a comment (public or internal), the assignee is notified with full context. Ensures agents don't miss customer replies.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on side conversation</div>
+          <h4>Side Conversation Replies → Set Ticket to Open</h4>
+          <div class="card-detail">
+            When a <strong>side conversation</strong> is created, replied to, or reopened, the parent ticket is set back to <strong>Open</strong> and a specific agent is notified. Ensures side convos don't get lost.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on custom status change</div>
+          <h4>"Solved — In Client Admin Hands Now"</h4>
+          <div class="card-detail">
+            When ticket is set to the custom status <strong>"Solved - in client admin hands now"</strong>, it auto-tags with <code>refer_to_system_admin</code>. This routes to a special solve notification path later.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Agent replies → ticket moves to Pending (awaiting customer) or On Hold (waiting on 3rd party)</div>
+
+    <!-- ===== STAGE 3: PENDING ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-amber); border-color:var(--pending); color:var(--pending);">⏳</div>
+      <div class="stage-header">
+        <h3>Stage 3 — Awaiting Customer Response</h3>
+        <span class="status-pill" style="background:var(--pending); color:#000;">PENDING</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 2 biz days pending</div>
+          <h4>Remind Requester: Pending Ticket Awaiting Response (Bump 1)</h4>
+          <div class="card-detail">
+            If a <strong>standard ticket</strong> (not enhancement/workaround) has been pending for <strong>20 biz hours (~2 days)</strong> with no response, sends a gentle reminder. Warns that ticket will close in 2 more biz days. Adds tag <code>bump1</code>.
+          </div>
+          <div class="card-detail" style="margin-top:4px;">
+            <strong>Skips:</strong> tickets already bumped, tagged <code>dont_bump</code>, or enhancement workarounds.
+          </div>
+          <div class="card-tags"><span class="tag">+ bump1</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 10 biz days pending (enhancements)</div>
+          <h4>Enhancement / Workaround Provided: Pending Reminder</h4>
+          <div class="card-detail">
+            For <strong>enhancement requests with a workaround provided</strong>, waits a longer <strong>88 biz hours (~10 days)</strong> before sending a bump. Gives customer time to evaluate the workaround.
+          </div>
+          <div class="card-tags"><span class="tag">+ bump1</span></div>
+        </div>
+
+        <div class="card genai">
+          <div class="card-type"><span class="icon">🤖</span> GenAI Automation — after 24h pending</div>
+          <h4>[GenAI] Bump on Autoreply</h4>
+          <div class="card-detail">
+            For tickets where the <strong>AI agent auto-replied</strong> (tagged <code>ar_suggest_true</code>), sends a follow-up bump after <strong>24 hours</strong> asking if they've reviewed the response. Re-sets to Pending.
+          </div>
+          <div class="card-tags"><span class="tag">+ bump_on_email_generative_reply</span></div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 8px 68px;"><span class="arrow">↓</span> Still no response after bump…</div>
+
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 4 biz days total pending</div>
+          <h4>Auto-Solve: Standard Pending Tickets (4 Days No Response)</h4>
+          <div class="card-detail">
+            If a standard ticket has <strong>bump1</strong> tag AND has been pending <strong>40 biz hours total</strong> with no reply, automatically sets status to <strong>Solved</strong>. The bump served as the final warning.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: solved</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 12 biz days total (enhancements)</div>
+          <h4>Auto-Solve: Enhancement Workarounds (No Response)</h4>
+          <div class="card-detail">
+            Enhancement tickets with <strong>workaround provided</strong> that have been pending <strong>110+ hours</strong> with bump1 and no reply are automatically <strong>Solved</strong>.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: solved</span></div>
+        </div>
+
+        <div class="card genai">
+          <div class="card-type"><span class="icon">🤖</span> GenAI Automation — after 48h total</div>
+          <h4>[GenAI] Auto-Solve on Autoreply</h4>
+          <div class="card-detail">
+            GenAI-replied tickets that were bumped and still have <strong>no response after 48 total hours</strong> are auto-solved with a friendly close message letting the customer know they can reply to reopen.
+          </div>
+          <div class="card-tags"><span class="tag">+ solved_on_email_generative_reply</span><span class="tag">→ status: solved</span></div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 0 68px;"><span class="arrow">↩</span> If customer replies, ticket reopens</div>
+
+      <div class="card-grid" style="margin-top:12px;">
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on reopen + agent reply</div>
+          <h4>Remove Bump1 Tag on Reopen</h4>
+          <div class="card-detail">
+            When a pending ticket <strong>reopens and an agent makes a public reply</strong>, the <code>bump1</code> tag is removed. This resets the bump cycle so the customer gets a fresh reminder window if the ticket goes pending again.
+          </div>
+          <div class="card-tags"><span class="tag">- bump1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Or ticket may go On Hold waiting for a third party…</div>
+
+    <!-- ===== STAGE 3b: ON HOLD ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-orange); border-color:var(--hold); color:var(--hold);">⏸️</div>
+      <div class="stage-header">
+        <h3>Stage 3b — On Hold (Waiting on Third Party)</h3>
+        <span class="status-pill" style="background:var(--hold); color:#000;">ON HOLD</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 5 calendar days on hold</div>
+          <h4>Re-Open On-Hold Ticket Before SLA Breach</h4>
+          <div class="card-detail">
+            Tickets on hold for <strong>120+ hours (5 days)</strong> are automatically moved to <strong>Open</strong> to prevent SLA breaches. The assignee gets a detailed email with next-step instructions.
+          </div>
+          <div class="card-detail" style="margin-top:4px;">
+            <strong>Exceptions:</strong> Tickets tagged <code>stay_on_hold</code> or in specific custom statuses (Suggestion, etc.) are excluded.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: open</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Issue resolved → Agent marks Solved</div>
+
+    <!-- ===== STAGE 4: SOLVED ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-purple); border-color:var(--solved); color:var(--solved);">✅</div>
+      <div class="stage-header">
+        <h3>Stage 4 — Solved</h3>
+        <span class="status-pill" style="background:var(--solved); color:#000;">SOLVED</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 4 biz hours after solved</div>
+          <h4>Notify Requester of Resolution (Standard Path)</h4>
+          <div class="card-detail">
+            <strong>4 business hours</strong> after a ticket is solved, the requester gets a resolution email with a CSAT rating link. Excludes tickets escalated to system admin, AnswerBot resolved, or tagged <code>no_solve_notice</code>.
+          </div>
+          <div class="card-tags"><span class="tag">+ resolved_sent</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 20 hours after solved</div>
+          <h4>Notify Requester of Resolution (System Admin Escalation)</h4>
+          <div class="card-detail">
+            Tickets tagged <code>refer_to_system_admin</code> get a <strong>different, delayed resolution email</strong> after 20 hours. The message references the system admin escalation and encourages follow-up if unresolved.
+          </div>
+          <div class="card-tags"><span class="tag">+ resolved_sent</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 2 hours after solved</div>
+          <h4>AnswerBot Resolved — Reply if Need More Help</h4>
+          <div class="card-detail">
+            For tickets where the customer marked an <strong>AnswerBot article as helpful</strong> (tagged <code>ar_marked_helpful</code>), a follow-up is sent after 2 hours saying "if you still need help, just reply."
+          </div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 0 68px;"><span class="arrow">↓</span> CSAT collection begins…</div>
+
+      <div class="card-grid" style="margin-top:12px;">
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
+          <h4>Request Customer Satisfaction Rating (Legacy)</h4>
+          <div class="card-detail">
+            The original CSAT automation. <strong>24 hours</strong> after solve, sends a rating request. Excludes tickets tagged <code>no_csat</code>, <code>ab_resolved</code>, or already sent.
+          </div>
+          <div class="card-tags"><span class="tag">+ sent_csat_email</span></div>
+        </div>
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
+          <h4>Request Customer Satisfaction Rating (System / New)</h4>
+          <div class="card-detail">
+            Newer system CSAT automation. Fires at <strong>24 hours</strong> post-solve for public tickets where CSAT hasn't been offered. Excludes <code>ar_marked_helpful</code> and <code>no_csat</code> tags.
+          </div>
+        </div>
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⭐</span> Trigger — fires on messaging solve</div>
+          <h4>CSAT for Messaging Channel</h4>
+          <div class="card-detail">
+            When a <strong>messaging ticket</strong> (via_id 75) is solved and CSAT hasn't been offered, immediately sends the messaging-native satisfaction survey.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 0 68px;"><span class="arrow">↓</span> If rating is bad…</div>
+
+      <div class="card-grid" style="margin-top:12px;">
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">🔔</span> Trigger — fires on bad rating</div>
+          <h4>Bad Rating Notification</h4>
+          <div class="card-detail">
+            When a customer gives a <strong>"Bad, I'm Unsatisfied"</strong> rating, alerts are sent to the <strong>manager, assignee, and all Tier 1 agents</strong>. Ticket is reopened, priority set to <strong>High</strong>, tagged <code>csat_followup</code>.
+          </div>
+          <div class="card-tags"><span class="tag">+ csat_followup</span><span class="tag">→ status: open</span><span class="tag">→ priority: high</span></div>
+        </div>
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after follow-up on bad rating</div>
+          <h4>Request to Change a Bad Rating</h4>
+          <div class="card-detail">
+            After a bad rating is addressed (tagged <code>bad_rating1</code>), a follow-up email invites the customer to <strong>re-rate their experience</strong> if things have improved.
+          </div>
+          <div class="card-tags"><span class="tag">+ chg_bad_rating</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> After grace period with no reply, ticket auto-closes</div>
+
+    <!-- ===== STAGE 5: CLOSED ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:rgba(100,116,139,0.15); border-color:var(--closed); color:var(--closed);">🔒</div>
+      <div class="stage-header">
+        <h3>Stage 5 — Closed</h3>
+        <span class="status-pill" style="background:var(--closed); color:#fff;">CLOSED</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 5 days after solved</div>
+          <h4>Close Ticket 5 Days After Solved (Standard)</h4>
+          <div class="card-detail">
+            All solved tickets are automatically <strong>closed after 120 hours (5 days)</strong>. This is the default closure path for most tickets. <strong>Highest-volume automation.</strong>
+          </div>
+          <div class="card-tags"><span class="tag">→ status: closed</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 1 biz day after solved</div>
+          <h4>Close Chat Ticket 1 Biz Day After Solved</h4>
+          <div class="card-detail">
+            Chat/messaging tickets (tagged <code>chat_close</code>) close faster — just <strong>8 biz hours (1 day)</strong> after solved, since these are typically quick interactions.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: closed</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== PARALLEL: TASK MANAGEMENT ===== -->
+    <div class="flow-stage" style="margin-top:24px;">
+      <div class="stage-icon" style="background:rgba(249,115,22,0.12); border-color:var(--accent-orange); color:var(--accent-orange);">📋</div>
+      <div class="stage-header">
+        <h3>Parallel Track — Internal Task Management</h3>
+        <span class="status-pill" style="background:var(--accent-orange); color:#000;">TASKS</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">📋</span> Automation — 3 hours after new task</div>
+          <h4>Task Needs Due Date</h4>
+          <div class="card-detail">
+            When a ticket is set to type <strong>Task</strong> but <strong>no due date</strong> is set within 3 hours, the assignee is reminded to set one.
+          </div>
+        </div>
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">📋</span> Trigger — fires on due date set</div>
+          <h4>Add Tag for Task Due Date Set</h4>
+          <div class="card-detail">
+            When a task type ticket gets a <strong>due date added</strong>, the tag <code>due_date_set</code> is applied to stop the "needs due date" reminder.
+          </div>
+          <div class="card-tags"><span class="tag">+ due_date_set</span></div>
+        </div>
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 1 biz day before due</div>
+          <h4>Alert: Tasks Due Within 1 Business Day</h4>
+          <div class="card-detail">
+            Sends a <strong>reminder</strong> to the assignee when a task's due date is <strong>less than 4 biz hours away</strong>. Tagged <code>t_reminder1</code> to prevent duplicates.
+          </div>
+          <div class="card-tags"><span class="tag">+ t_reminder1</span></div>
+        </div>
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — day of due date</div>
+          <h4>Alert: Tasks Due Today</h4>
+          <div class="card-detail">
+            Fires on the <strong>day a task is due</strong> (within 24 hours of due date). Sends a more urgent reminder with instructions to close or create follow-up tickets.
+          </div>
+          <div class="card-tags"><span class="tag">+ t_reminder2</span></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /flow -->
+</div><!-- /lifecycle -->
+
+<!-- ============================================================ -->
+<!-- TAB: OVERVIEW -->
+<!-- ============================================================ -->
+<div class="section" id="overview">
+  <div class="section-title">System Overview & Stats</div>
+  <div class="section-desc">High-level summary of your Zendesk automation setup at Time Study.</div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="num">14</div>
+      <div class="label">Active Triggers</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">16</div>
+      <div class="label">Active Automations</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">3</div>
+      <div class="label">Intake Channels</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">4</div>
+      <div class="label">Automation Chains</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">6</div>
+      <div class="label">Ticket Statuses</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:16px;">Ticket Status Timeline</div>
+  <div class="section-desc">Visual representation of how a typical ticket moves through statuses and the key automations at each boundary.</div>
+
+  <div class="timeline-row">
+    <div class="timeline-seg" style="flex:1; background:var(--new);">
+      <span class="tip">NEW — Created by end-user or agent</span>
+      NEW
+    </div>
+    <div class="timeline-seg" style="flex:4; background:var(--open);">
+      <span class="tip">OPEN — Agent working the ticket</span>
+      OPEN
+    </div>
+    <div class="timeline-seg" style="flex:3; background:var(--pending);">
+      <span class="tip">PENDING — Awaiting customer reply (bump at 2d, solve at 4d)</span>
+      PENDING
+    </div>
+    <div class="timeline-seg" style="flex:2; background:var(--hold);">
+      <span class="tip">ON HOLD — Waiting 3rd party (auto-reopen at 5d)</span>
+      HOLD
+    </div>
+    <div class="timeline-seg" style="flex:2.5; background:var(--solved);">
+      <span class="tip">SOLVED — Resolution sent, CSAT at 24h</span>
+      SOLVED
+    </div>
+    <div class="timeline-seg" style="flex:1; background:var(--closed);">
+      <span class="tip">CLOSED — Auto-close at 5d (1d for chat)</span>
+      CLOSED
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:32px;">Key Automation Chains</div>
+  <div class="section-desc">The most important multi-step sequences built into your workflow.</div>
+
+  <div class="card-grid">
+    <div class="card automation" style="background:var(--surface2);">
+      <h4>🔄 Standard Pending → Solve Chain</h4>
+      <div class="card-detail">
+        <strong>Day 0:</strong> Agent replies, ticket → Pending<br>
+        <strong>Day 2:</strong> Auto-bump to requester (+ bump1 tag)<br>
+        <strong>Day 4:</strong> Auto-solve if no reply<br>
+        <strong>+4 hrs:</strong> Resolution notification<br>
+        <strong>+24 hrs:</strong> CSAT survey sent<br>
+        <strong>+5 days:</strong> Auto-close
+      </div>
+    </div>
+
+    <div class="card genai" style="background:var(--surface2);">
+      <h4>🤖 GenAI Auto-Reply Chain</h4>
+      <div class="card-detail">
+        <strong>Immediately:</strong> AI agent sends generative reply with articles<br>
+        <strong>+24 hrs:</strong> Bump asking if they reviewed the response<br>
+        <strong>+48 hrs:</strong> Auto-solve with friendly close message<br>
+        <strong>+5 days:</strong> Auto-close
+      </div>
+    </div>
+
+    <div class="card automation" style="background:var(--surface2);">
+      <h4>🛠️ Enhancement Workaround Chain</h4>
+      <div class="card-detail">
+        <strong>Day 0:</strong> Workaround provided, ticket → Pending<br>
+        <strong>Day 10:</strong> Bump to requester (extended grace period)<br>
+        <strong>Day 12:</strong> Auto-solve if no reply<br>
+        <strong>+20 hrs:</strong> Resolution notification<br>
+        <strong>+24 hrs:</strong> CSAT survey<br>
+        <strong>+5 days:</strong> Auto-close
+      </div>
+    </div>
+
+    <div class="card csat" style="background:var(--surface2);">
+      <h4>⭐ Bad Rating Recovery Chain</h4>
+      <div class="card-detail">
+        <strong>Trigger:</strong> Bad rating → alerts manager, assignee, Tier 1 group<br>
+        <strong>Action:</strong> Ticket reopened, priority → High<br>
+        <strong>Follow-up:</strong> After agent addresses, re-rate request sent<br>
+        <strong>Goal:</strong> Turn a bad experience into a recovered one
+      </div>
+    </div>
+  </div>
+
+</div><!-- /overview -->
+
+<!-- ============================================================ -->
+<!-- TAB: ALL TRIGGERS -->
+<!-- ============================================================ -->
+<div class="section" id="triggers">
+  <div class="section-title">All Active Triggers (14)</div>
+  <div class="section-desc">Triggers fire immediately when a ticket event occurs (creation, update, assignment change, etc.).</div>
+
+  <div style="overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius);">
+    <table class="rules-table">
+      <thead>
+        <tr>
+          <th style="width:30px;">#</th>
+          <th>Trigger Name</th>
+          <th>Fires On</th>
+          <th>Key Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Generative reply for AI agent</td><td>Ticket created by end-user</td><td>AI auto-reply + articles, set type/priority</td></tr>
+        <tr><td>2</td><td>Notify requester of proactive ticket</td><td>Agent creates ticket for user</td><td>Email notification to requester</td></tr>
+        <tr><td>3</td><td>Notify requester & CCs of comment</td><td>Any public comment added</td><td>Email to requester + CCs with CSAT link</td></tr>
+        <tr><td>4</td><td>Notify assignee of comment update</td><td>Comment by non-assignee</td><td>Email to assignee with context</td></tr>
+        <tr><td>5</td><td>Notify assignee of assignment</td><td>Ticket reassigned</td><td>Email to new assignee</td></tr>
+        <tr><td>6</td><td>Notify group of assignment</td><td>Group assigned (no agent)</td><td>Email to group (excl. Tech Team)</td></tr>
+        <tr><td>7</td><td>Notify all agents of received request</td><td>Any ticket created</td><td>Email to Tier 1 group</td></tr>
+        <tr><td>8</td><td>Notify group (light agents)</td><td>Tech Team group assigned/updated</td><td>Email to light agents with permission info</td></tr>
+        <tr><td>9</td><td>Bad Rating Notification</td><td>Bad CSAT rating received</td><td>Alert manager + assignee + group, reopen, priority → High</td></tr>
+        <tr><td>10</td><td>Remove bump1 on reopen</td><td>Pending → Open + agent reply</td><td>Remove bump1 tag (reset cycle)</td></tr>
+        <tr><td>11</td><td>Add tag for task due date set</td><td>Task type + due date set</td><td>Add due_date_set tag</td></tr>
+        <tr><td>12</td><td>Side Convo replies → Open</td><td>Side conversation activity</td><td>Set ticket Open, notify agent</td></tr>
+        <tr><td>13</td><td>"Solved - in client admin hands"</td><td>Custom status change</td><td>Tag refer_to_system_admin</td></tr>
+        <tr><td>14</td><td>CSAT for messaging</td><td>Messaging ticket solved</td><td>Send messaging CSAT survey</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div><!-- /triggers -->
+
+<!-- ============================================================ -->
+<!-- TAB: ALL AUTOMATIONS -->
+<!-- ============================================================ -->
+<div class="section" id="automations">
+  <div class="section-title">All Active Automations (16)</div>
+  <div class="section-desc">Automations run on a schedule, checking time-based conditions (hours pending, days since solved, etc.).</div>
+
+  <div style="overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius);">
+    <table class="rules-table">
+      <thead>
+        <tr>
+          <th style="width:30px;">#</th>
+          <th>Automation Name</th>
+          <th>Timing</th>
+          <th>Key Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Remind requester — pending 2 biz days</td><td>20 biz hrs pending</td><td>Email bump, add bump1</td></tr>
+        <tr><td>2</td><td>Enhancement workaround — pending reminder</td><td>88 biz hrs pending</td><td>Email bump, add bump1</td></tr>
+        <tr><td>3</td><td>Auto-solve standard pending (4 days)</td><td>40 biz hrs + bump1</td><td>Set status → Solved</td></tr>
+        <tr><td>4</td><td>Auto-solve enhancement workaround</td><td>110 hrs + bump1</td><td>Set status → Solved</td></tr>
+        <tr><td>5</td><td>Close ticket 5 days after solved</td><td>120 hrs solved</td><td>Set status → Closed</td></tr>
+        <tr><td>6</td><td>Notify requester of resolution (standard)</td><td>4 biz hrs after solved</td><td>Email resolution notice + CSAT link</td></tr>
+        <tr><td>7</td><td>Notify requester of resolution (sys admin)</td><td>20 hrs after solved</td><td>Email with admin escalation context</td></tr>
+        <tr><td>8</td><td>CSAT rating request (legacy)</td><td>24 hrs after solved</td><td>Email CSAT survey, mark offered</td></tr>
+        <tr><td>9</td><td>CSAT rating request (system/new)</td><td>24 hrs after solved</td><td>Email CSAT survey</td></tr>
+        <tr><td>10</td><td>Request to change bad rating</td><td>After bad_rating1 tag</td><td>Email re-rate invitation</td></tr>
+        <tr><td>11</td><td>Re-open on-hold before SLA breach</td><td>120 hrs on hold</td><td>Set Open, email assignee</td></tr>
+        <tr><td>12</td><td>Alert: tasks due within 1 biz day</td><td>&lt;4 biz hrs to due date</td><td>Email assignee, add t_reminder1</td></tr>
+        <tr><td>13</td><td>Alert: tasks due today</td><td>&lt;24 hrs to due date</td><td>Email assignee, add t_reminder2</td></tr>
+        <tr><td>14</td><td>Task needs due date</td><td>3 hrs after task created</td><td>Email assignee to set due date</td></tr>
+        <tr><td>15</td><td>[GenAI] Bump on autoreply</td><td>24 hrs, AI-replied pending</td><td>Email bump, tag, keep pending</td></tr>
+        <tr><td>16</td><td>[GenAI] Solve on autoreply</td><td>48 hrs, AI-replied + bumped</td><td>Email close notice, set Solved</td></tr>
+        <tr><td>—</td><td><em>AnswerBot resolved follow-up</em></td><td>2 hrs after solved (ar_marked_helpful)</td><td>Email "reply if need more help"</td></tr>
+        <tr><td>—</td><td><em>Close chat ticket</em></td><td>8 biz hrs after solved (chat_close)</td><td>Set status → Closed</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div><!-- /automations -->
+
+</div><!-- /content -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
 </body>
 </html>
