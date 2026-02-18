@@ -1,0 +1,34 @@
+<div class="section" id="triggers">
+  <div class="section-title">All Active Triggers (14)</div>
+  <div class="section-desc">Triggers fire immediately when a ticket event occurs (creation, update, assignment change, etc.).</div>
+
+  <div style="overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius);">
+    <table class="rules-table">
+      <thead>
+        <tr>
+          <th style="width:30px;">#</th>
+          <th>Trigger Name</th>
+          <th>Fires On</th>
+          <th>Key Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Generative reply for AI agent</td><td>Ticket created by end-user</td><td>AI auto-reply + articles, set type/priority</td></tr>
+        <tr><td>2</td><td>Notify requester of proactive ticket</td><td>Agent creates ticket for user</td><td>Email notification to requester</td></tr>
+        <tr><td>3</td><td>Notify requester & CCs of comment</td><td>Any public comment added</td><td>Email to requester + CCs with CSAT link</td></tr>
+        <tr><td>4</td><td>Notify assignee of comment update</td><td>Comment by non-assignee</td><td>Email to assignee with context</td></tr>
+        <tr><td>5</td><td>Notify assignee of assignment</td><td>Ticket reassigned</td><td>Email to new assignee</td></tr>
+        <tr><td>6</td><td>Notify group of assignment</td><td>Group assigned (no agent)</td><td>Email to group (excl. Tech Team)</td></tr>
+        <tr><td>7</td><td>Notify all agents of received request</td><td>Any ticket created</td><td>Email to Tier 1 group</td></tr>
+        <tr><td>8</td><td>Notify group (light agents)</td><td>Tech Team group assigned/updated</td><td>Email to light agents with permission info</td></tr>
+        <tr><td>9</td><td>Bad Rating Notification</td><td>Bad CSAT rating received</td><td>Alert manager + assignee + group, reopen, priority → High</td></tr>
+        <tr><td>10</td><td>Remove bump1 on reopen</td><td>Pending → Open + agent reply</td><td>Remove bump1 tag (reset cycle)</td></tr>
+        <tr><td>11</td><td>Add tag for task due date set</td><td>Task type + due date set</td><td>Add due_date_set tag</td></tr>
+        <tr><td>12</td><td>Side Convo replies → Open</td><td>Side conversation activity</td><td>Set ticket Open, notify agent</td></tr>
+        <tr><td>13</td><td>"Solved - in client admin hands"</td><td>Custom status change</td><td>Tag refer_to_system_admin</td></tr>
+        <tr><td>14</td><td>CSAT for messaging</td><td>Messaging ticket solved</td><td>Send messaging CSAT survey</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div><!-- /triggers -->

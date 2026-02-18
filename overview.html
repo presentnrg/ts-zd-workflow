@@ -1,0 +1,107 @@
+<div class="section" id="overview">
+  <div class="section-title">System Overview & Stats</div>
+  <div class="section-desc">High-level summary of your Zendesk automation setup at Time Study.</div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="num">14</div>
+      <div class="label">Active Triggers</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">16</div>
+      <div class="label">Active Automations</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">3</div>
+      <div class="label">Intake Channels</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">4</div>
+      <div class="label">Automation Chains</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">6</div>
+      <div class="label">Ticket Statuses</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:16px;">Ticket Status Timeline</div>
+  <div class="section-desc">Visual representation of how a typical ticket moves through statuses and the key automations at each boundary.</div>
+
+  <div class="timeline-row">
+    <div class="timeline-seg" style="flex:1; background:var(--new);">
+      <span class="tip">NEW — Created by end-user or agent</span>
+      NEW
+    </div>
+    <div class="timeline-seg" style="flex:4; background:var(--open);">
+      <span class="tip">OPEN — Agent working the ticket</span>
+      OPEN
+    </div>
+    <div class="timeline-seg" style="flex:3; background:var(--pending);">
+      <span class="tip">PENDING — Awaiting customer reply (bump at 2d, solve at 4d)</span>
+      PENDING
+    </div>
+    <div class="timeline-seg" style="flex:2; background:var(--hold);">
+      <span class="tip">ON HOLD — Waiting 3rd party (auto-reopen at 5d)</span>
+      HOLD
+    </div>
+    <div class="timeline-seg" style="flex:2.5; background:var(--solved);">
+      <span class="tip">SOLVED — Resolution sent, CSAT at 24h</span>
+      SOLVED
+    </div>
+    <div class="timeline-seg" style="flex:1; background:var(--closed);">
+      <span class="tip">CLOSED — Auto-close at 5d (1d for chat)</span>
+      CLOSED
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:32px;">Key Automation Chains</div>
+  <div class="section-desc">The most important multi-step sequences built into your workflow.</div>
+
+  <div class="card-grid">
+    <div class="card automation" style="background:var(--surface2);">
+      <h4>🔄 Standard Pending → Solve Chain</h4>
+      <div class="card-detail">
+        <strong>Day 0:</strong> Agent replies, ticket → Pending<br>
+        <strong>Day 2:</strong> Auto-bump to requester (+ bump1 tag)<br>
+        <strong>Day 4:</strong> Auto-solve if no reply<br>
+        <strong>+4 hrs:</strong> Resolution notification<br>
+        <strong>+24 hrs:</strong> CSAT survey sent<br>
+        <strong>+5 days:</strong> Auto-close
+      </div>
+    </div>
+
+    <div class="card genai" style="background:var(--surface2);">
+      <h4>🤖 GenAI Auto-Reply Chain</h4>
+      <div class="card-detail">
+        <strong>Immediately:</strong> AI agent sends generative reply with articles<br>
+        <strong>+24 hrs:</strong> Bump asking if they reviewed the response<br>
+        <strong>+48 hrs:</strong> Auto-solve with friendly close message<br>
+        <strong>+5 days:</strong> Auto-close
+      </div>
+    </div>
+
+    <div class="card automation" style="background:var(--surface2);">
+      <h4>🛠️ Enhancement Workaround Chain</h4>
+      <div class="card-detail">
+        <strong>Day 0:</strong> Workaround provided, ticket → Pending<br>
+        <strong>Day 10:</strong> Bump to requester (extended grace period)<br>
+        <strong>Day 12:</strong> Auto-solve if no reply<br>
+        <strong>+20 hrs:</strong> Resolution notification<br>
+        <strong>+24 hrs:</strong> CSAT survey<br>
+        <strong>+5 days:</strong> Auto-close
+      </div>
+    </div>
+
+    <div class="card csat" style="background:var(--surface2);">
+      <h4>⭐ Bad Rating Recovery Chain</h4>
+      <div class="card-detail">
+        <strong>Trigger:</strong> Bad rating → alerts manager, assignee, Tier 1 group<br>
+        <strong>Action:</strong> Ticket reopened, priority → High<br>
+        <strong>Follow-up:</strong> After agent addresses, re-rate request sent<br>
+        <strong>Goal:</strong> Turn a bad experience into a recovered one
+      </div>
+    </div>
+  </div>
+
+</div><!-- /overview -->

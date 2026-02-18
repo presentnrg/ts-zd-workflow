@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Study — Zendesk Ticket Lifecycle</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>⚙️ Time Study — Zendesk Ticket Lifecycle</h1>
+      <p>Complete workflow map of triggers, automations, and the ticket journey from creation to close</p>
+      <div class="badge-row" style="margin-top:10px;">
+        <span class="badge"><span class="dot" style="background:var(--accent-cyan)"></span> 14 Triggers</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-amber)"></span> 16 Automations</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-green)"></span> All Active</span>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <button class="tab active" data-tab="lifecycle">🔄 Full Lifecycle</button>
+      <button class="tab" data-tab="overview">📊 Overview</button>
+      <button class="tab" data-tab="ai-channels">🤖 AI &amp; Channels</button>
+      <button class="tab" data-tab="triggers">⚡ All Triggers</button>
+      <button class="tab" data-tab="automations">⏱️ All Automations</button>
+    </div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-bar">
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-cyan)"></span> Trigger (fires on event)</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-amber)"></span> Automation (time-based)</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-pink)"></span> GenAI Autoreply</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-green)"></span> CSAT / Feedback</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--accent-orange)"></span> Task Management</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--new)"></span> New</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--open)"></span> Open</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--pending)"></span> Pending</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--hold)"></span> On Hold</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--solved)"></span> Solved</div>
+  <div class="legend-item"><span class="swatch" style="background:var(--closed)"></span> Closed</div>
+</div>
+
+<!-- TAB CONTENT AREA -->
+<div class="content">
+
+<!-- Lifecycle tab is inline for fast first-paint -->
+<div class="section active" id="lifecycle">
+  <div class="section-title">Ticket Lifecycle — End to End</div>
+  <div class="section-desc">Walk through every stage of a ticket's life, from the moment it's created to final closure. Each card shows what fires, when, and what it does.</div>
+
+  <div class="flow">
+
+    <!-- ===== STAGE 1: TICKET CREATION (NEW) ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-blue); border-color:var(--new); color:var(--new);">📩</div>
+      <div class="stage-header">
+        <h3>Stage 1 — Ticket Created</h3>
+        <span class="status-pill" style="background:var(--new); color:#000;">NEW</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card genai">
+          <div class="card-type"><span class="icon">🤖</span> GenAI Trigger — fires on create</div>
+          <h4>Generative Reply for AI Agent "Time Study Virtual Support"</h4>
+          <div class="card-detail">
+            When an <strong>end-user</strong> submits a ticket via email, web form, or API, the AI agent sends an <strong>immediate auto-reply</strong> with suggested help center articles. Sets type to <strong>Question</strong>, priority to <strong>Normal</strong>, and a custom awaiting-reply status.
+          </div>
+          <div class="card-detail" style="margin-top:6px;">
+            <strong>Channels:</strong> Email to support@timestudy.co, web form, API
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on create</div>
+          <h4>Notify Requester of Proactive Ticket</h4>
+          <div class="card-detail">
+            When an <strong>agent creates a ticket on behalf of a user</strong> (proactive outreach), the requester is notified by email with the ticket details and a link.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on create</div>
+          <h4>Notify All Agents of Received Request</h4>
+          <div class="card-detail">
+            Sends a <strong>group notification to Tier 1</strong> agents whenever any new ticket is created, so nothing falls through the cracks.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Agent picks up ticket → assigns → works the issue</div>
+
+    <!-- ===== STAGE 2: OPEN / IN PROGRESS ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-green); border-color:var(--open); color:var(--open);">🔧</div>
+      <div class="stage-header">
+        <h3>Stage 2 — Working the Ticket</h3>
+        <span class="status-pill" style="background:var(--open); color:#000;">OPEN</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on assignment change</div>
+          <h4>Notify Assignee of Assignment</h4>
+          <div class="card-detail">
+            When a ticket is <strong>reassigned</strong> to a different agent (not self-assigned), the new assignee gets an email with full ticket context, comments, and CCs.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on group change</div>
+          <h4>Notify Group of Assignment (excl. Tech Team)</h4>
+          <div class="card-detail">
+            When a ticket is assigned to a <strong>group with no specific agent</strong>, all group members are notified — <em>except</em> the Tech Team group, which has its own trigger.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on group change or update</div>
+          <h4>Notify Tech Team (Light Agents) of Assignment</h4>
+          <div class="card-detail">
+            Special notification for the <strong>Tech Team group (light agents)</strong> with instructions about their limited permissions — they can only add internal notes, not public replies.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on any public comment</div>
+          <h4>Notify Requester & CCs of Comment Update</h4>
+          <div class="card-detail">
+            Whenever <strong>any public comment</strong> is added, the requester and all CCs receive an email with the latest comment and a CSAT rating link. <strong>Highest-traffic trigger.</strong>
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on any comment</div>
+          <h4>Notify Assignee of Comment Update</h4>
+          <div class="card-detail">
+            When <strong>anyone other than the assignee</strong> adds a comment (public or internal), the assignee is notified with full context. Ensures agents don't miss customer replies.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on side conversation</div>
+          <h4>Side Conversation Replies → Set Ticket to Open</h4>
+          <div class="card-detail">
+            When a <strong>side conversation</strong> is created, replied to, or reopened, the parent ticket is set back to <strong>Open</strong> and a specific agent is notified. Ensures side convos don't get lost.
+          </div>
+        </div>
+
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on custom status change</div>
+          <h4>"Solved — In Client Admin Hands Now"</h4>
+          <div class="card-detail">
+            When ticket is set to the custom status <strong>"Solved - in client admin hands now"</strong>, it auto-tags with <code>refer_to_system_admin</code>. This routes to a special solve notification path later.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Agent replies → ticket moves to Pending (awaiting customer) or On Hold (waiting on 3rd party)</div>
+
+    <!-- ===== STAGE 3: PENDING ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-amber); border-color:var(--pending); color:var(--pending);">⏳</div>
+      <div class="stage-header">
+        <h3>Stage 3 — Awaiting Customer Response</h3>
+        <span class="status-pill" style="background:var(--pending); color:#000;">PENDING</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 2 biz days pending</div>
+          <h4>Remind Requester: Pending Ticket Awaiting Response (Bump 1)</h4>
+          <div class="card-detail">
+            If a <strong>standard ticket</strong> (not enhancement/workaround) has been pending for <strong>20 biz hours (~2 days)</strong> with no response, sends a gentle reminder. Warns that ticket will close in 2 more biz days. Adds tag <code>bump1</code>.
+          </div>
+          <div class="card-detail" style="margin-top:4px;">
+            <strong>Skips:</strong> tickets already bumped, tagged <code>dont_bump</code>, or enhancement workarounds.
+          </div>
+          <div class="card-tags"><span class="tag">+ bump1</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 10 biz days pending (enhancements)</div>
+          <h4>Enhancement / Workaround Provided: Pending Reminder</h4>
+          <div class="card-detail">
+            For <strong>enhancement requests with a workaround provided</strong>, waits a longer <strong>88 biz hours (~10 days)</strong> before sending a bump. Gives customer time to evaluate the workaround.
+          </div>
+          <div class="card-tags"><span class="tag">+ bump1</span></div>
+        </div>
+
+        <div class="card genai">
+          <div class="card-type"><span class="icon">🤖</span> GenAI Automation — after 24h pending</div>
+          <h4>[GenAI] Bump on Autoreply</h4>
+          <div class="card-detail">
+            For tickets where the <strong>AI agent auto-replied</strong> (tagged <code>ar_suggest_true</code>), sends a follow-up bump after <strong>24 hours</strong> asking if they've reviewed the response. Re-sets to Pending.
+          </div>
+          <div class="card-tags"><span class="tag">+ bump_on_email_generative_reply</span></div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 8px 68px;"><span class="arrow">↓</span> Still no response after bump…</div>
+
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 4 biz days total pending</div>
+          <h4>Auto-Solve: Standard Pending Tickets (4 Days No Response)</h4>
+          <div class="card-detail">
+            If a standard ticket has <strong>bump1</strong> tag AND has been pending <strong>40 biz hours total</strong> with no reply, automatically sets status to <strong>Solved</strong>. The bump served as the final warning.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: solved</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 12 biz days total (enhancements)</div>
+          <h4>Auto-Solve: Enhancement Workarounds (No Response)</h4>
+          <div class="card-detail">
+            Enhancement tickets with <strong>workaround provided</strong> that have been pending <strong>110+ hours</strong> with bump1 and no reply are automatically <strong>Solved</strong>.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: solved</span></div>
+        </div>
+
+        <div class="card genai">
+          <div class="card-type"><span class="icon">🤖</span> GenAI Automation — after 48h total</div>
+          <h4>[GenAI] Auto-Solve on Autoreply</h4>
+          <div class="card-detail">
+            GenAI-replied tickets that were bumped and still have <strong>no response after 48 total hours</strong> are auto-solved with a friendly close message letting the customer know they can reply to reopen.
+          </div>
+          <div class="card-tags"><span class="tag">+ solved_on_email_generative_reply</span><span class="tag">→ status: solved</span></div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 0 68px;"><span class="arrow">↩</span> If customer replies, ticket reopens</div>
+
+      <div class="card-grid" style="margin-top:12px;">
+        <div class="card trigger">
+          <div class="card-type"><span class="icon">⚡</span> Trigger — fires on reopen + agent reply</div>
+          <h4>Remove Bump1 Tag on Reopen</h4>
+          <div class="card-detail">
+            When a pending ticket <strong>reopens and an agent makes a public reply</strong>, the <code>bump1</code> tag is removed. This resets the bump cycle so the customer gets a fresh reminder window if the ticket goes pending again.
+          </div>
+          <div class="card-tags"><span class="tag">- bump1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Or ticket may go On Hold waiting for a third party…</div>
+
+    <!-- ===== STAGE 3b: ON HOLD ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-orange); border-color:var(--hold); color:var(--hold);">⏸️</div>
+      <div class="stage-header">
+        <h3>Stage 3b — On Hold (Waiting on Third Party)</h3>
+        <span class="status-pill" style="background:var(--hold); color:#000;">ON HOLD</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after 5 calendar days on hold</div>
+          <h4>Re-Open On-Hold Ticket Before SLA Breach</h4>
+          <div class="card-detail">
+            Tickets on hold for <strong>120+ hours (5 days)</strong> are automatically moved to <strong>Open</strong> to prevent SLA breaches. The assignee gets a detailed email with next-step instructions.
+          </div>
+          <div class="card-detail" style="margin-top:4px;">
+            <strong>Exceptions:</strong> Tickets tagged <code>stay_on_hold</code> or in specific custom statuses (Suggestion, etc.) are excluded.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: open</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> Issue resolved → Agent marks Solved</div>
+
+    <!-- ===== STAGE 4: SOLVED ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:var(--glow-purple); border-color:var(--solved); color:var(--solved);">✅</div>
+      <div class="stage-header">
+        <h3>Stage 4 — Solved</h3>
+        <span class="status-pill" style="background:var(--solved); color:#000;">SOLVED</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 4 biz hours after solved</div>
+          <h4>Notify Requester of Resolution (Standard Path)</h4>
+          <div class="card-detail">
+            <strong>4 business hours</strong> after a ticket is solved, the requester gets a resolution email with a CSAT rating link. Excludes tickets escalated to system admin, AnswerBot resolved, or tagged <code>no_solve_notice</code>.
+          </div>
+          <div class="card-tags"><span class="tag">+ resolved_sent</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 20 hours after solved</div>
+          <h4>Notify Requester of Resolution (System Admin Escalation)</h4>
+          <div class="card-detail">
+            Tickets tagged <code>refer_to_system_admin</code> get a <strong>different, delayed resolution email</strong> after 20 hours. The message references the system admin escalation and encourages follow-up if unresolved.
+          </div>
+          <div class="card-tags"><span class="tag">+ resolved_sent</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 2 hours after solved</div>
+          <h4>AnswerBot Resolved — Reply if Need More Help</h4>
+          <div class="card-detail">
+            For tickets where the customer marked an <strong>AnswerBot article as helpful</strong> (tagged <code>ar_marked_helpful</code>), a follow-up is sent after 2 hours saying "if you still need help, just reply."
+          </div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 0 68px;"><span class="arrow">↓</span> CSAT collection begins…</div>
+
+      <div class="card-grid" style="margin-top:12px;">
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
+          <h4>Request Customer Satisfaction Rating (Legacy)</h4>
+          <div class="card-detail">
+            The original CSAT automation. <strong>24 hours</strong> after solve, sends a rating request. Excludes tickets tagged <code>no_csat</code>, <code>ab_resolved</code>, or already sent.
+          </div>
+          <div class="card-tags"><span class="tag">+ sent_csat_email</span></div>
+        </div>
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
+          <h4>Request Customer Satisfaction Rating (System / New)</h4>
+          <div class="card-detail">
+            Newer system CSAT automation. Fires at <strong>24 hours</strong> post-solve for public tickets where CSAT hasn't been offered. Excludes <code>ar_marked_helpful</code> and <code>no_csat</code> tags.
+          </div>
+        </div>
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⭐</span> Trigger — fires on messaging solve</div>
+          <h4>CSAT for Messaging Channel</h4>
+          <div class="card-detail">
+            When a <strong>messaging ticket</strong> (via_id 75) is solved and CSAT hasn't been offered, immediately sends the messaging-native satisfaction survey.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="padding-left:0; margin: 8px 0 0 68px;"><span class="arrow">↓</span> If rating is bad…</div>
+
+      <div class="card-grid" style="margin-top:12px;">
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">🔔</span> Trigger — fires on bad rating</div>
+          <h4>Bad Rating Notification</h4>
+          <div class="card-detail">
+            When a customer gives a <strong>"Bad, I'm Unsatisfied"</strong> rating, alerts are sent to the <strong>manager, assignee, and all Tier 1 agents</strong>. Ticket is reopened, priority set to <strong>High</strong>, tagged <code>csat_followup</code>.
+          </div>
+          <div class="card-tags"><span class="tag">+ csat_followup</span><span class="tag">→ status: open</span><span class="tag">→ priority: high</span></div>
+        </div>
+
+        <div class="card csat">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — after follow-up on bad rating</div>
+          <h4>Request to Change a Bad Rating</h4>
+          <div class="card-detail">
+            After a bad rating is addressed (tagged <code>bad_rating1</code>), a follow-up email invites the customer to <strong>re-rate their experience</strong> if things have improved.
+          </div>
+          <div class="card-tags"><span class="tag">+ chg_bad_rating</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="connector"><span class="arrow">↓</span> After grace period with no reply, ticket auto-closes</div>
+
+    <!-- ===== STAGE 5: CLOSED ===== -->
+    <div class="flow-stage">
+      <div class="stage-icon" style="background:rgba(100,116,139,0.15); border-color:var(--closed); color:var(--closed);">🔒</div>
+      <div class="stage-header">
+        <h3>Stage 5 — Closed</h3>
+        <span class="status-pill" style="background:var(--closed); color:#fff;">CLOSED</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 5 days after solved</div>
+          <h4>Close Ticket 5 Days After Solved (Standard)</h4>
+          <div class="card-detail">
+            All solved tickets are automatically <strong>closed after 120 hours (5 days)</strong>. This is the default closure path for most tickets. <strong>Highest-volume automation.</strong>
+          </div>
+          <div class="card-tags"><span class="tag">→ status: closed</span></div>
+        </div>
+
+        <div class="card automation">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 1 biz day after solved</div>
+          <h4>Close Chat Ticket 1 Biz Day After Solved</h4>
+          <div class="card-detail">
+            Chat/messaging tickets (tagged <code>chat_close</code>) close faster — just <strong>8 biz hours (1 day)</strong> after solved, since these are typically quick interactions.
+          </div>
+          <div class="card-tags"><span class="tag">→ status: closed</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== PARALLEL: TASK MANAGEMENT ===== -->
+    <div class="flow-stage" style="margin-top:24px;">
+      <div class="stage-icon" style="background:rgba(249,115,22,0.12); border-color:var(--accent-orange); color:var(--accent-orange);">📋</div>
+      <div class="stage-header">
+        <h3>Parallel Track — Internal Task Management</h3>
+        <span class="status-pill" style="background:var(--accent-orange); color:#000;">TASKS</span>
+      </div>
+      <div class="card-grid">
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">📋</span> Automation — 3 hours after new task</div>
+          <h4>Task Needs Due Date</h4>
+          <div class="card-detail">
+            When a ticket is set to type <strong>Task</strong> but <strong>no due date</strong> is set within 3 hours, the assignee is reminded to set one.
+          </div>
+        </div>
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">📋</span> Trigger — fires on due date set</div>
+          <h4>Add Tag for Task Due Date Set</h4>
+          <div class="card-detail">
+            When a task type ticket gets a <strong>due date added</strong>, the tag <code>due_date_set</code> is applied to stop the "needs due date" reminder.
+          </div>
+          <div class="card-tags"><span class="tag">+ due_date_set</span></div>
+        </div>
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — 1 biz day before due</div>
+          <h4>Alert: Tasks Due Within 1 Business Day</h4>
+          <div class="card-detail">
+            Sends a <strong>reminder</strong> to the assignee when a task's due date is <strong>less than 4 biz hours away</strong>. Tagged <code>t_reminder1</code> to prevent duplicates.
+          </div>
+          <div class="card-tags"><span class="tag">+ t_reminder1</span></div>
+        </div>
+
+        <div class="card task">
+          <div class="card-type"><span class="icon">⏱️</span> Automation — day of due date</div>
+          <h4>Alert: Tasks Due Today</h4>
+          <div class="card-detail">
+            Fires on the <strong>day a task is due</strong> (within 24 hours of due date). Sends a more urgent reminder with instructions to close or create follow-up tickets.
+          </div>
+          <div class="card-tags"><span class="tag">+ t_reminder2</span></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /flow -->
+</div><!-- /lifecycle -->
+
+</div><!-- /content -->
+
+<script src="js/app.js"></script>
+</body>
+</html>
