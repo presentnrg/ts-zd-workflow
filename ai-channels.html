@@ -1,4 +1,109 @@
 <div class="section" id="ai-channels">
-  <div class="section-title">AI & Channels</div>
-  <div class="section-desc">AI agent configuration, channel-specific behavior, and human touchpoints. (Content coming soon — we'll build this out next.)</div>
-</div>
+  <div class="section-title">AI &amp; Channels</div>
+  <div class="section-desc">AI agent configuration, channel-specific behavior, human touchpoints, and administrative links.</div>
+
+  <!-- HUMAN-FIRST PHILOSOPHY -->
+  <div class="card-grid">
+    <div class="card genai" style="background:var(--surface2);">
+      <h4>🧑‍💼 Human-First Philosophy</h4>
+      <div class="card-detail">
+        AI serves as a <strong>transparent front door</strong>, not a barrier to human support. Every AI interaction includes clear disclosure ("I'm an AI assistant") and explicit paths to reach a human agent. Messaging tickets are <strong>checked manually daily</strong> — agent notifications only apply to email &amp; async channels.
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANNEL COMPARISON -->
+  <div class="section-title" style="margin-top:24px;">Channel Behavior</div>
+  <div class="section-desc">How the AI agent behaves differently across channels.</div>
+
+  <div class="card-grid">
+    <div class="card trigger" style="background:var(--surface2);">
+      <h4>📧 Email Channel</h4>
+      <div class="card-detail">
+        <strong>Behavior:</strong> Single long-form generative response with suggested help center articles<br>
+        <strong>Disclosure:</strong> Explicit AI identification in every reply<br>
+        <strong>Escalation:</strong> Customer can reply to reach a human agent<br>
+        <strong>Notifications:</strong> Agent notifications fire on all ticket events<br>
+        <strong>Address:</strong> support@timestudy.co
+      </div>
+    </div>
+
+    <div class="card trigger" style="background:var(--surface2);">
+      <h4>💬 Messaging Channel</h4>
+      <div class="card-detail">
+        <strong>Behavior:</strong> Multi-turn conversational AI with on-demand escalation<br>
+        <strong>Disclosure:</strong> AI identification in conversation<br>
+        <strong>Escalation:</strong> "Click here to provide your contact information" flow for human handoff<br>
+        <strong>Notifications:</strong> No automated agent alerts — <em>messaging queue checked manually daily</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONVERSATION FLOWS -->
+  <div class="section-title" style="margin-top:24px;">Active Conversation Flow</div>
+  <div class="section-desc">Pre-built flow used as a fallback escalation path in the messaging channel.</div>
+
+  <div class="card-grid">
+    <div class="card genai" style="background:var(--surface2);">
+      <h4>📋 "Click here to provide your contact information"</h4>
+      <div class="card-detail">
+        When a messaging customer requests human help, this flow collects their <strong>name, email, and description</strong> so an agent can follow up. Used as the messaging fallback when AI can't resolve the issue.
+      </div>
+    </div>
+  </div>
+
+  <!-- HELP CENTER AI SEARCH -->
+  <div class="section-title" style="margin-top:24px;">Help Center AI Search</div>
+  <div class="section-desc">AI-powered search integrated into the knowledge base.</div>
+
+  <div class="card-grid">
+    <div class="card genai" style="background:var(--surface2);">
+      <h4>🔍 AI-Powered Quick Answers</h4>
+      <div class="card-detail">
+        The help center at <a href="https://support.timestudy.co/hc/en-us" target="_blank" style="color:var(--accent-cyan);">support.timestudy.co</a> provides <strong>AI-powered quick answers</strong> alongside traditional search results. Customers get instant AI-generated summaries drawn from published articles — without creating a ticket. This deflects common questions before they ever reach the support queue.
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN LINKS -->
+  <div class="section-title" style="margin-top:24px;">🔗 Administrative Links</div>
+  <div class="section-desc">Quick access to Zendesk admin areas for managers and the CEO.</div>
+
+  <div class="card-grid">
+    <div class="card" style="background:var(--surface2); border-left: 3px solid var(--accent-blue);">
+      <h4>AI Agent Dashboard</h4>
+      <div class="card-detail">
+        <a href="https://timestudy.zendesk.com/admin/bots/agents" target="_blank" style="color:var(--accent-cyan);">Open AI Agents →</a>
+      </div>
+    </div>
+
+    <div class="card" style="background:var(--surface2); border-left: 3px solid var(--accent-blue);">
+      <h4>AI Agent Instructions</h4>
+      <div class="card-detail">
+        <a href="https://timestudy.zendesk.com/admin/bots/agents/instructions" target="_blank" style="color:var(--accent-cyan);">Open Instructions →</a>
+      </div>
+    </div>
+
+    <div class="card" style="background:var(--surface2); border-left: 3px solid var(--accent-blue);">
+      <h4>Answers &amp; Conversation Flows</h4>
+      <div class="card-detail">
+        <a href="https://timestudy.zendesk.com/admin/bots/agents/answers" target="_blank" style="color:var(--accent-cyan);">Open Answers/Flows →</a>
+      </div>
+    </div>
+
+    <div class="card" style="background:var(--surface2); border-left: 3px solid var(--accent-blue);">
+      <h4>Triggers Management</h4>
+      <div class="card-detail">
+        <a href="https://timestudy.zendesk.com/admin/objects-rules/rules/triggers" target="_blank" style="color:var(--accent-cyan);">Open Triggers →</a>
+      </div>
+    </div>
+
+    <div class="card" style="background:var(--surface2); border-left: 3px solid var(--accent-blue);">
+      <h4>Automations Management</h4>
+      <div class="card-detail">
+        <a href="https://timestudy.zendesk.com/admin/objects-rules/rules/automations" target="_blank" style="color:var(--accent-cyan);">Open Automations →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /ai-channels -->

@@ -17,7 +17,7 @@
       <p>Complete workflow map of triggers, automations, and the ticket journey from creation to close</p>
       <div class="badge-row" style="margin-top:10px;">
         <span class="badge"><span class="dot" style="background:var(--accent-cyan)"></span> 14 Triggers</span>
-        <span class="badge"><span class="dot" style="background:var(--accent-amber)"></span> 16 Automations</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-amber)"></span> 15 Automations</span>
         <span class="badge"><span class="dot" style="background:var(--accent-green)"></span> All Active</span>
       </div>
     </div>
@@ -72,7 +72,7 @@
             When an <strong>end-user</strong> submits a ticket via email, web form, or API, the AI agent sends an <strong>immediate auto-reply</strong> with suggested help center articles. Sets type to <strong>Question</strong>, priority to <strong>Normal</strong>, and a custom awaiting-reply status.
           </div>
           <div class="card-detail" style="margin-top:6px;">
-            <strong>Channels:</strong> Email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aedddbdedec1dcdaeedac7c3cbdddadbcad780cdc1">[email&#160;protected]</a>, web form, API
+            <strong>Channels:</strong> Email to support@timestudy.co, web form, API
           </div>
         </div>
 
@@ -110,7 +110,7 @@
           <div class="card-type"><span class="icon">⚡</span> Trigger — fires on assignment change</div>
           <h4>Notify Assignee of Assignment</h4>
           <div class="card-detail">
-            When a ticket is <strong>reassigned</strong> to a different agent (not self-assigned), the new assignee gets an email with full ticket context, comments, and CCs.
+            When a ticket is <strong>reassigned</strong> to a different agent (not self-assigned), the new assignee gets an email with full ticket context, comments, and CCs. <em>Applies to email &amp; async channels only — messaging tickets are checked manually daily.</em>
           </div>
         </div>
 
@@ -326,18 +326,9 @@
 
         <div class="card csat">
           <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
-          <h4>Request Customer Satisfaction Rating (Legacy)</h4>
+          <h4>Request Customer Satisfaction Rating (System)</h4>
           <div class="card-detail">
-            The original CSAT automation. <strong>24 hours</strong> after solve, sends a rating request. Excludes tickets tagged <code>no_csat</code>, <code>ab_resolved</code>, or already sent.
-          </div>
-          <div class="card-tags"><span class="tag">+ sent_csat_email</span></div>
-        </div>
-
-        <div class="card csat">
-          <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
-          <h4>Request Customer Satisfaction Rating (System / New)</h4>
-          <div class="card-detail">
-            Newer system CSAT automation. Fires at <strong>24 hours</strong> post-solve for public tickets where CSAT hasn't been offered. Excludes <code>ar_marked_helpful</code> and <code>no_csat</code> tags.
+            <strong>24 hours</strong> after solve, sends a CSAT rating request for public tickets where CSAT hasn't been offered. Excludes tickets tagged <code>no_csat</code>, <code>ab_resolved</code>, <code>sent_csat_email</code>, <code>no_solve_notice</code>, or <code>ar_marked_helpful</code>.
           </div>
         </div>
 
