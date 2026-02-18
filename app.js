@@ -27,7 +27,7 @@ async function showTab(id) {
   
   if (!tabCache[id]) {
     try {
-      const response = await fetch(`tabs/${id}.html`);
+      const response = await fetch(`${id}.html`);
       if (!response.ok) throw new Error(`Failed to load tab: ${id}`);
       tabCache[id] = await response.text();
     } catch (err) {
