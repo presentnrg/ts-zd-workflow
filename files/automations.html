@@ -1,0 +1,38 @@
+<div class="section" id="automations">
+  <div class="section-title">All Active Automations (16)</div>
+  <div class="section-desc">Automations run on a schedule, checking time-based conditions (hours pending, days since solved, etc.).</div>
+
+  <div style="overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius);">
+    <table class="rules-table">
+      <thead>
+        <tr>
+          <th style="width:30px;">#</th>
+          <th>Automation Name</th>
+          <th>Timing</th>
+          <th>Key Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Remind requester — pending 2 biz days</td><td>20 biz hrs pending</td><td>Email bump, add bump1</td></tr>
+        <tr><td>2</td><td>Enhancement workaround — pending reminder</td><td>88 biz hrs pending</td><td>Email bump, add bump1</td></tr>
+        <tr><td>3</td><td>Auto-solve standard pending (4 days)</td><td>40 biz hrs + bump1</td><td>Set status → Solved</td></tr>
+        <tr><td>4</td><td>Auto-solve enhancement workaround</td><td>110 hrs + bump1</td><td>Set status → Solved</td></tr>
+        <tr><td>5</td><td>Close ticket 5 days after solved</td><td>120 hrs solved</td><td>Set status → Closed</td></tr>
+        <tr><td>6</td><td>Notify requester of resolution (standard)</td><td>4 biz hrs after solved</td><td>Email resolution notice + CSAT link</td></tr>
+        <tr><td>7</td><td>Notify requester of resolution (sys admin)</td><td>20 hrs after solved</td><td>Email with admin escalation context</td></tr>
+        <tr><td>8</td><td>CSAT rating request (legacy)</td><td>24 hrs after solved</td><td>Email CSAT survey, mark offered</td></tr>
+        <tr><td>9</td><td>CSAT rating request (system/new)</td><td>24 hrs after solved</td><td>Email CSAT survey</td></tr>
+        <tr><td>10</td><td>Request to change bad rating</td><td>After bad_rating1 tag</td><td>Email re-rate invitation</td></tr>
+        <tr><td>11</td><td>Re-open on-hold before SLA breach</td><td>120 hrs on hold</td><td>Set Open, email assignee</td></tr>
+        <tr><td>12</td><td>Alert: tasks due within 1 biz day</td><td>&lt;4 biz hrs to due date</td><td>Email assignee, add t_reminder1</td></tr>
+        <tr><td>13</td><td>Alert: tasks due today</td><td>&lt;24 hrs to due date</td><td>Email assignee, add t_reminder2</td></tr>
+        <tr><td>14</td><td>Task needs due date</td><td>3 hrs after task created</td><td>Email assignee to set due date</td></tr>
+        <tr><td>15</td><td>[GenAI] Bump on autoreply</td><td>24 hrs, AI-replied pending</td><td>Email bump, tag, keep pending</td></tr>
+        <tr><td>16</td><td>[GenAI] Solve on autoreply</td><td>48 hrs, AI-replied + bumped</td><td>Email close notice, set Solved</td></tr>
+        <tr><td>—</td><td><em>AnswerBot resolved follow-up</em></td><td>2 hrs after solved (ar_marked_helpful)</td><td>Email "reply if need more help"</td></tr>
+        <tr><td>—</td><td><em>Close chat ticket</em></td><td>8 biz hrs after solved (chat_close)</td><td>Set status → Closed</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div><!-- /automations -->
