@@ -1,1 +1,70 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Document</title>\n    <style>\n        /* Complete the missing CSS rules on lines 42 and 44 */\n        .tab {\n            display: inline-block;\n            margin: 0 10px;\n            padding: 10px;\n            border-radius: 5px;\n            background-color: #f1f1f1;\n        }\n        .tab.active {\n            background-color: #ccc;\n        }\n        /* Additional styling for tabs */\n        .tab-button {\n            cursor: pointer;\n            outline: none;\n        }\n        /* ... other styles ... */\n    </style>\n</head>\n<body>\n    <header>\n        <h1>Header Badge: <span id="badge">16 Automations</span></h1>\n    </header>\n    <main>\n        <div class="tabs">\n            <button class="tab-button" aria-controls="tab1" aria-selected="true" role="tab">Tab 1</button>\n            <button class="tab-button" aria-controls="tab2" aria-selected="false" role="tab">Tab 2</button>\n        </div>\n        <div class="tab-content">\n            <div id="tab1" role="tabpanel" aria-labelledby="tab1">\n                <p>Content for Tab 1</p>\n            </div>\n            <div id="tab2" role="tabpanel" aria-labelledby="tab2" hidden>\n                <p>Content for Tab 2</p>\n            </div>\n        </div>\n    </main>\n    <script>\n        function showTab(tabId) {\n            // Function to show the selected tab's content\n            const tabs = document.querySelectorAll('.tab-content > div');\n            tabs.forEach(tab => {\n                tab.hidden = true;\n            });\n            document.getElementById(tabId).hidden = false;\n        }\n    </script>\n    <!-- Remove CloudFlare email protection and replace with actual email addresses -->\n    <footer>\n        <p>Contact us at: example@example.com</p>\n    </footer>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Study Zendesk Ticket Lifecycle Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .tab { display: none; }
+        .tab.active { display: block; }
+        .tabs { display: flex; justify-content: space-around; background-color: #f1f1f1; padding: 10px; }
+        .tab-link { padding: 10px; cursor: pointer; }
+        .tab-link.active { background-color: #d1d1d1; }
+        .card { border: 1px solid #ccc; border-radius: 5px; padding: 20px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab-link active" onclick="showTab('lifecycle')">Lifecycle</div>
+        <div class="tab-link" onclick="showTab('overview')">Overview</div>
+        <div class="tab-link" onclick="showTab('channels')">Channels</div>
+        <div class="tab-link" onclick="showTab('triggers')">Triggers</div>
+        <div class="tab-link" onclick="showTab('automations')">Automations</div>
+    </div>
+    <div class="tab active" id="lifecycle">
+        <div class="card">
+            <h2>Lifecycle</h2>
+            <p>Details about the ticket lifecycle...</p>
+        </div>
+    </div>
+    <div class="tab" id="overview">
+        <div class="card">
+            <h2>Overview</h2>
+            <p>Overview of the ticketing system...</p>
+        </div>
+    </div>
+    <div class="tab" id="channels">
+        <div class="card">
+            <h2>Channels</h2>
+            <p>Information about the channels...</p>
+        </div>
+    </div>
+    <div class="tab" id="triggers">
+        <div class="card">
+            <h2>Triggers</h2>
+            <p>Description of triggers...</p>
+        </div>
+    </div>
+    <div class="tab" id="automations">
+        <div class="card">
+            <h2>Automations</h2>
+            <p>Details on automations...</p>
+        </div>
+    </div>
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const tabLinks = document.querySelectorAll('.tab-link');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            tabLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab-link[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
