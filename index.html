@@ -35,471 +35,136 @@
     --glow-purple: rgba(167,139,250,0.15);
     --radius: 12px;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.6; overflow-x: hidden; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+  .header { padding: 40px 48px 32px; background: linear-gradient(180deg, rgba(59,130,246,0.06) 0%, transparent 100%); border-bottom: 1px solid var(--border); position: relative; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-green), var(--accent-amber), var(--accent-purple)); }
+  .header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .header p { color: var(--text-dim); font-size: 14px; margin-top: 6px; }
+  .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px; background: var(--surface2); border: 1px solid var(--border); color: var(--text-dim); }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
-  /* ---- HEADER ---- */
-  .header {
-    padding: 40px 48px 32px;
-    background: linear-gradient(180deg, rgba(59,130,246,0.06) 0%, transparent 100%);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-green), var(--accent-amber), var(--accent-purple));
-  }
-  .header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .header p {
-    color: var(--text-dim);
-    font-size: 14px;
-    margin-top: 6px;
-  }
-  .badge-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 4px;
-  }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-  }
-  .badge .dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+  .legend-bar { display: flex; gap: 20px; padding: 16px 48px; background: var(--surface); border-bottom: 1px solid var(--border); overflow-x: auto; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-dim); white-space: nowrap; padding: 4px 8px; border-radius: 6px; }
+  .legend-item .swatch { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
 
-  /* ---- LEGEND ---- */
-  .legend-bar {
-    display: flex;
-    gap: 20px;
-    padding: 16px 48px;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-    flex-wrap: wrap;
-  }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: var(--text-dim);
-    white-space: nowrap;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 6px;
-    transition: background 0.2s;
-  }
-  .legend-item:hover { background: var(--surface2); }
-  .legend-item .swatch {
-    width: 10px; height: 10px;
-    border-radius: 3px;
-    flex-shrink: 0;
-  }
+  .tab-bar { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tab { padding: 10px 20px; font-size: 13px; font-weight: 600; color: var(--text-dim); background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.25s; white-space: nowrap; letter-spacing: 0.2px; }
+  .tab:hover { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.4); color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.15); }
+  .tab.active { background: linear-gradient(135deg, var(--accent-blue), #6366f1); border-color: transparent; color: #fff; box-shadow: 0 4px 16px rgba(59,130,246,0.3); }
 
-  /* ---- NAV TABS ---- */
-  .tab-bar {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .tab {
-    padding: 10px 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-dim);
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.25s;
-    white-space: nowrap;
-    letter-spacing: 0.2px;
-  }
-  .tab:hover {
-    background: rgba(59,130,246,0.12);
-    border-color: rgba(59,130,246,0.4);
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59,130,246,0.15);
-  }
-  .tab.active {
-    background: linear-gradient(135deg, var(--accent-blue), #6366f1);
-    border-color: transparent;
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(59,130,246,0.3);
-  }
-
-  /* ---- MAIN CONTENT ---- */
   .content { padding: 32px 48px 64px; }
-
-  /* ---- SECTION ---- */
-  .section {
-    display: none;
-    animation: fadeIn 0.35s ease;
-  }
+  .section { display: none; animation: fadeIn 0.35s ease; }
   .section.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  .section-title { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #fff; }
+  .section-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 24px; max-width: 700px; }
 
-  .section-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #fff;
-  }
-  .section-desc {
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 24px;
-    max-width: 700px;
-  }
-
-  /* ---- FLOW DIAGRAM ---- */
-  .flow {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-  }
-
-  .flow-stage {
-    position: relative;
-    padding-left: 68px;
-    padding-bottom: 8px;
-  }
-
-  .flow-stage::before {
-    content: '';
-    position: absolute;
-    left: 23px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--border);
-  }
+  .flow { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .flow-stage { position: relative; padding-left: 68px; padding-bottom: 8px; }
+  .flow-stage::before { content: ''; position: absolute; left: 23px; top: 0; bottom: 0; width: 2px; background: var(--border); }
   .flow-stage:last-child::before { display: none; }
+  .stage-icon { position: absolute; left: 4px; top: 0; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; z-index: 2; border: 2px solid; }
+  .stage-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .stage-header h3 { font-size: 16px; font-weight: 600; }
+  .stage-header .status-pill { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; padding: 3px 10px; border-radius: 5px; }
 
-  .stage-icon {
-    position: absolute;
-    left: 4px;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    z-index: 2;
-    border: 2px solid;
-  }
-
-  .stage-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-  .stage-header h3 {
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .stage-header .status-pill {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    padding: 3px 10px;
-    border-radius: 5px;
-  }
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 18px;
-    transition: all 0.25s;
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-  }
-  .card:hover {
-    border-color: rgba(255,255,255,0.12);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  }
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 100%;
-  }
-
-  .card-type {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; transition: all 0.25s; cursor: default; position: relative; overflow: hidden; }
+  .card:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
+  .card-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
   .card-type .icon { font-size: 12px; }
+  .card h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 8px; line-height: 1.4; }
+  .card-detail { font-size: 11.5px; color: var(--text-dim); line-height: 1.55; }
+  .card-detail strong { color: var(--text); font-weight: 500; }
+  .card-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 4px; background: rgba(255,255,255,0.05); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.06); }
 
-  .card h4 {
-    font-size: 13px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
-
-  .card-detail {
-    font-size: 11.5px;
-    color: var(--text-dim);
-    line-height: 1.55;
-  }
-  .card-detail strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  .card-tags {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-  .tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    padding: 2px 7px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.05);
-    color: var(--text-muted);
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-
-  /* Card accent colors */
   .card.trigger::before { background: var(--accent-cyan); }
   .card.trigger .card-type { color: var(--accent-cyan); }
-
   .card.automation::before { background: var(--accent-amber); }
   .card.automation .card-type { color: var(--accent-amber); }
-
   .card.genai::before { background: var(--accent-pink); }
   .card.genai .card-type { color: var(--accent-pink); }
-
   .card.csat::before { background: var(--accent-green); }
   .card.csat .card-type { color: var(--accent-green); }
-
   .card.task::before { background: var(--accent-orange); }
   .card.task .card-type { color: var(--accent-orange); }
+  .card.human::before { background: #60a5fa; }
+  .card.human .card-type { color: #60a5fa; }
 
-  /* ---- CONNECTOR ARROWS ---- */
-  .connector {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 0 6px 68px;
-    font-size: 11px;
-    color: var(--text-muted);
-    position: relative;
-  }
-  .connector .arrow {
-    font-size: 14px;
-    color: var(--text-muted);
-  }
+  .human-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.25); margin-left: 6px; }
 
-  /* ---- SUMMARY STATS ---- */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px 20px;
-    text-align: center;
-  }
-  .stat-card .num {
-    font-size: 32px;
-    font-weight: 700;
-    background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .stat-card .label {
-    font-size: 12px;
-    color: var(--text-dim);
-    margin-top: 2px;
-  }
+  .connector { display: flex; align-items: center; gap: 8px; padding: 6px 0 6px 68px; font-size: 11px; color: var(--text-muted); position: relative; }
+  .connector .arrow { font-size: 14px; color: var(--text-muted); }
 
-  /* ---- TIMELINE ---- */
-  .timeline-row {
-    display: flex;
-    align-items: stretch;
-    gap: 2px;
-    margin: 24px 0;
-    height: 48px;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .timeline-seg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: rgba(0,0,0,0.7);
-    position: relative;
-    transition: all 0.3s;
-    cursor: default;
-    min-width: 32px;
-  }
-  .timeline-seg:hover {
-    filter: brightness(1.15);
-  }
-  .timeline-seg .tip {
-    display: none;
-    position: absolute;
-    top: -40px;
-    background: #000;
-    color: #fff;
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    white-space: nowrap;
-    z-index: 10;
-    pointer-events: none;
-  }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; text-align: center; }
+  .stat-card .num { font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-card .label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+
+  .timeline-row { display: flex; align-items: stretch; gap: 2px; margin: 24px 0; height: 48px; border-radius: 8px; overflow: hidden; }
+  .timeline-seg { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(0,0,0,0.7); position: relative; transition: all 0.3s; cursor: default; min-width: 32px; }
+  .timeline-seg:hover { filter: brightness(1.15); }
+  .timeline-seg .tip { display: none; position: absolute; top: -40px; background: #000; color: #fff; font-size: 11px; padding: 4px 10px; border-radius: 6px; white-space: nowrap; z-index: 10; pointer-events: none; }
   .timeline-seg:hover .tip { display: block; }
 
-  /* ---- TABLE ---- */
-  .rules-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
-  .rules-table th {
-    text-align: left;
-    padding: 10px 14px;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: var(--text-muted);
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 3;
-  }
-  .rules-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-dim);
-    vertical-align: top;
-  }
-  .rules-table tr:hover td {
-    background: var(--surface);
-  }
-  .rules-table .type-badge {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-  .rules-table .type-badge.trigger {
-    background: rgba(34,211,238,0.12);
-    color: var(--accent-cyan);
-  }
-  .rules-table .type-badge.automation {
-    background: rgba(251,191,36,0.12);
-    color: var(--accent-amber);
-  }
+  .rules-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .rules-table th { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 3; }
+  .rules-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-dim); vertical-align: top; }
+  .rules-table tr:hover td { background: var(--surface); }
+  .rules-table .type-badge { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+  .rules-table .type-badge.trigger { background: rgba(34,211,238,0.12); color: var(--accent-cyan); }
+  .rules-table .type-badge.automation { background: rgba(251,191,36,0.12); color: var(--accent-amber); }
 
-  /* ---- RESPONSIVE ---- */
+  /* Channel split */
+  .channel-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+  .channel-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; position: relative; }
+  .channel-col h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .channel-col .subtitle { font-size: 12px; color: var(--text-dim); margin-bottom: 16px; }
+  .channel-col::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--radius) var(--radius) 0 0; }
+  .channel-col.email-col::before { background: linear-gradient(90deg, var(--accent-pink), var(--accent-purple)); }
+  .channel-col.msg-col::before { background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green)); }
+
+  .step-flow { display: flex; flex-direction: column; gap: 0; }
+  .step-item { display: flex; gap: 12px; padding: 10px 0; position: relative; }
+  .step-item:not(:last-child)::after { content: ''; position: absolute; left: 13px; top: 36px; bottom: -2px; width: 1.5px; background: var(--border); }
+  .step-num { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; z-index: 1; }
+  .step-content { flex: 1; }
+  .step-content .step-title { font-size: 12.5px; font-weight: 600; color: #fff; line-height: 1.4; }
+  .step-content .step-desc { font-size: 11px; color: var(--text-dim); line-height: 1.5; margin-top: 2px; }
+
+  .instruction-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px; }
+  .instruction-card .inst-name { font-size: 12.5px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .instruction-card .inst-desc { font-size: 11.5px; color: var(--text-dim); line-height: 1.5; }
+  .instruction-card .inst-channel { display: inline-flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 6px; border-radius: 3px; margin-top: 6px; margin-right: 4px; }
+  .ch-msg { background: rgba(34,211,238,0.12); color: var(--accent-cyan); }
+  .ch-email { background: rgba(244,114,182,0.12); color: var(--accent-pink); }
+  .ch-both { background: rgba(167,139,250,0.12); color: var(--accent-purple); }
+
+  .callout { background: var(--surface); border: 1px solid; border-radius: var(--radius); padding: 16px 20px; margin: 16px 0; display: flex; gap: 12px; align-items: flex-start; }
+  .callout .callout-icon { font-size: 20px; flex-shrink: 0; line-height: 1; }
+  .callout .callout-text { font-size: 12.5px; color: var(--text-dim); line-height: 1.55; }
+  .callout .callout-text strong { color: var(--text); }
+  .callout.human-callout { border-color: rgba(96,165,250,0.3); background: rgba(96,165,250,0.04); }
+  .callout.ai-callout { border-color: rgba(244,114,182,0.3); background: rgba(244,114,182,0.04); }
+
   @media (max-width: 768px) {
     .header, .content, .legend-bar { padding-left: 20px; padding-right: 20px; }
     .header-top { flex-direction: column; align-items: flex-start; }
     .tab-bar { width: 100%; margin-top: 16px; }
     .flow-stage { padding-left: 52px; }
     .connector { padding-left: 52px; }
-    .flow-stage::before { left: 18px; }
+    .flow-stage::before { left: 19px; }
     .stage-icon { left: 0; width: 36px; height: 36px; font-size: 16px; }
-    .card-grid { grid-template-columns: 1fr; }
-    .header h1 { font-size: 22px; }
+    .channel-split { grid-template-columns: 1fr; }
   }
-
-  /* Print-friendly */
-  @media print {
-    body { background: #fff; color: #111; }
-    .card { border: 1px solid #ddd; background: #f9f9fb; }
-    .header::before { display: none; }
-    .tab-bar { display: none; }
-    .section { display: block !important; page-break-inside: avoid; margin-bottom: 24px; }
-  }
+  @media print { .tab-bar { display: none; } .section { display: block !important; page-break-inside: avoid; margin-bottom: 24px; } }
 </style>
 </head>
 <body>
@@ -509,16 +174,18 @@
   <div class="header-top">
     <div>
       <h1>⚙️ Time Study — Zendesk Ticket Lifecycle</h1>
-      <p>Complete workflow map of triggers, automations, and the ticket journey from creation to close</p>
+      <p>Complete workflow map of triggers, automations, AI agent configuration, and the ticket journey from creation to close</p>
       <div class="badge-row" style="margin-top:10px;">
         <span class="badge"><span class="dot" style="background:var(--accent-cyan)"></span> 14 Triggers</span>
-        <span class="badge"><span class="dot" style="background:var(--accent-amber)"></span> 16 Automations</span>
-        <span class="badge"><span class="dot" style="background:var(--accent-green)"></span> All Active</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-amber)"></span> 15 Automations</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-pink)"></span> AI Agent: Active</span>
+        <span class="badge"><span class="dot" style="background:#60a5fa"></span> Escalate to Human Anytime</span>
       </div>
     </div>
     <div class="tab-bar">
       <button class="tab active" onclick="showTab('lifecycle')">🔄 Full Lifecycle</button>
       <button class="tab" onclick="showTab('overview')">📊 Overview</button>
+      <button class="tab" onclick="showTab('channels')">🤖 AI & Channels</button>
       <button class="tab" onclick="showTab('triggers')">⚡ All Triggers</button>
       <button class="tab" onclick="showTab('automations')">⏱️ All Automations</button>
     </div>
@@ -530,6 +197,7 @@
   <div class="legend-item"><span class="swatch" style="background:var(--accent-cyan)"></span> Trigger (fires on event)</div>
   <div class="legend-item"><span class="swatch" style="background:var(--accent-amber)"></span> Automation (time-based)</div>
   <div class="legend-item"><span class="swatch" style="background:var(--accent-pink)"></span> GenAI Autoreply</div>
+  <div class="legend-item"><span class="swatch" style="background:#60a5fa"></span> Human Touchpoint</div>
   <div class="legend-item"><span class="swatch" style="background:var(--accent-green)"></span> CSAT / Feedback</div>
   <div class="legend-item"><span class="swatch" style="background:var(--accent-orange)"></span> Task Management</div>
   <div class="legend-item"><span class="swatch" style="background:var(--new)"></span> New</div>
@@ -540,11 +208,311 @@
   <div class="legend-item"><span class="swatch" style="background:var(--closed)"></span> Closed</div>
 </div>
 
+<div class="content">
 
 <!-- ============================================================ -->
-<!-- TAB: FULL LIFECYCLE -->
+<!-- TAB: AI & CHANNELS (DEFAULT) -->
 <!-- ============================================================ -->
-<div class="content">
+<div class="section" id="channels">
+  <div class="section-title">AI Agent &amp; Channel Strategy</div>
+  <div class="section-desc">How "Time Study Virtual Support" handles customer requests across messaging and email — and how every path leads to a human when needed.</div>
+
+  <div class="callout human-callout">
+    <div class="callout-icon">👤</div>
+    <div class="callout-text">
+      <strong>Human-First Philosophy:</strong> AI is a smart front door, not a wall. Every AI interaction is transparent about being automated, every response includes a clear path to a human agent, and the Time Study tech support team reviews all tickets regardless of AI resolution. Customers are never forced to interact with AI — they can request a human at any time.
+    </div>
+  </div>
+
+  <!-- AI Agent Profile -->
+  <div class="section-title" style="margin-top:28px; font-size:15px;">🤖 AI Agent Profile</div>
+  <div style="margin:12px 0 24px;">
+    <div class="stats-row" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+      <div class="stat-card"><div class="num" style="font-size:16px;">Time Study Virtual Support</div><div class="label">Agent Name</div></div>
+      <div class="stat-card"><div class="num" style="font-size:18px;">Professional</div><div class="label">Persona &amp; Tone</div></div>
+      <div class="stat-card"><div class="num" style="font-size:18px;">No Emojis</div><div class="label">Emoji Policy</div></div>
+      <div class="stat-card"><div class="num" style="font-size:18px;">Generative AI</div><div class="label">Reply Mode</div></div>
+      <div class="stat-card"><div class="num" style="font-size:18px;">Help Center</div><div class="label">Knowledge Source</div></div>
+    </div>
+  </div>
+
+  <div class="callout ai-callout">
+    <div class="callout-icon">💬</div>
+    <div class="callout-text">
+      <strong>Greeting Message (Messaging):</strong> "Hello, I'm the Time Study digital assistant. I can answer many questions or refer you to help center articles. I know your time is valuable, so if I'm not able to quickly resolve your issue, I can <strong>share your message with our human support staff.</strong>"
+    </div>
+  </div>
+
+  <div class="callout ai-callout" style="margin-top:8px;">
+    <div class="callout-icon">🚫</div>
+    <div class="callout-text">
+      <strong>Fallback Message (when AI can't answer):</strong> "I'm sorry, I can't find an answer. If you would like help from a human, please click the button to leave your name, work email address, and organization name, and <strong>someone will review your message and get back to you.</strong> Or rephrase and I'll try again."
+    </div>
+  </div>
+
+  <!-- CHANNEL SPLIT -->
+  <div class="section-title" style="margin-top:28px; font-size:15px;">📡 Channel Comparison: Email vs. Messaging</div>
+  <div class="section-desc">Both channels use the same AI agent and help center knowledge, but the experience differs significantly.</div>
+
+  <div class="channel-split">
+    <!-- EMAIL -->
+    <div class="channel-col email-col">
+      <h3>📧 Email &amp; Web Form</h3>
+      <div class="subtitle">Single generative response → human review of every ticket</div>
+      <div class="step-flow">
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(244,114,182,0.15); color:var(--accent-pink);">1</div>
+          <div class="step-content">
+            <div class="step-title">Customer submits ticket via email or web form</div>
+            <div class="step-desc">Sent to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbb8bebbbba4b9bf8bbfa2a6aeb8bfbeafb2e5a8a4">[email&#160;protected]</a> or via the help center web form</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(244,114,182,0.15); color:var(--accent-pink);">2</div>
+          <div class="step-content">
+            <div class="step-title">🤖 AI generates a long-form reply with help center articles</div>
+            <div class="step-desc">Sets type to Question, priority to Normal. Includes article links and disclosure that the response is AI-generated.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(96,165,250,0.15); color:#60a5fa;">3</div>
+          <div class="step-content">
+            <div class="step-title">👤 AI explicitly invites human follow-up</div>
+            <div class="step-desc">Every email tells the customer: "If we haven't resolved your concern, please reply, and a member of the Time Study Tech Support team will respond."</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(96,165,250,0.15); color:#60a5fa;">4</div>
+          <div class="step-content">
+            <div class="step-title">👤 Tier 1 agents notified &amp; review every ticket</div>
+            <div class="step-desc">Group notification fires for all new tickets. Agent assigns, reviews AI response, and follows up as needed.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(251,191,36,0.15); color:var(--accent-amber);">5</div>
+          <div class="step-content">
+            <div class="step-title">If no reply → bump at 24h → auto-solve at 48h more</div>
+            <div class="step-desc">GenAI automations check in, then close if no further help needed.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px; padding:10px 12px; background:rgba(244,114,182,0.06); border-radius:8px; border:1px solid rgba(244,114,182,0.15);">
+        <div style="font-size:11px; font-weight:600; color:var(--accent-pink); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Email Safeguards</div>
+        <div style="font-size:11px; color:var(--text-dim); line-height:1.5;">
+          • Won't respond if a human agent (Nikki, DeAnn, or Jeff) already replied<br>
+          • Won't respond to internal @timestudy.com staff<br>
+          • Won't duplicate answers for the same person / same topic<br>
+          • Reply length: <strong>Long</strong> (detailed, with article links)
+        </div>
+      </div>
+    </div>
+
+    <!-- MESSAGING -->
+    <div class="channel-col msg-col">
+      <h3>💬 Messaging (Web Widget)</h3>
+      <div class="subtitle">Multi-turn AI conversation → escalation to human on demand</div>
+      <div class="step-flow">
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(34,211,238,0.15); color:var(--accent-cyan);">1</div>
+          <div class="step-content">
+            <div class="step-title">Customer opens the web widget</div>
+            <div class="step-desc">AI greets them, identifies itself as a digital assistant, and mentions human support is available.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(34,211,238,0.15); color:var(--accent-cyan);">2</div>
+          <div class="step-content">
+            <div class="step-title">🤖 AI has a back-and-forth conversation</div>
+            <div class="step-desc">Short, conversational replies from help center content. Asks follow-up questions if less than 95% confident.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(34,211,238,0.15); color:var(--accent-cyan);">3</div>
+          <div class="step-content">
+            <div class="step-title">🤖 AI offers "Was this helpful?" feedback</div>
+            <div class="step-desc">Standard feedback loop after each AI answer.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(96,165,250,0.15); color:#60a5fa;">4</div>
+          <div class="step-content">
+            <div class="step-title">👤 Customer can escalate to human at any time</div>
+            <div class="step-desc">AI offers to connect them with tech support. If it can't answer → fallback with "Click here to provide your contact information" for human follow-up.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:rgba(96,165,250,0.15); color:#60a5fa;">5</div>
+          <div class="step-content">
+            <div class="step-title">👤 Human receives full conversation transcript</div>
+            <div class="step-desc">When escalated, the ticket includes the complete AI conversation — no repeating yourself.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px; padding:10px 12px; background:rgba(34,211,238,0.06); border-radius:8px; border:1px solid rgba(34,211,238,0.15);">
+        <div style="font-size:11px; font-weight:600; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Messaging Safeguards</div>
+        <div style="font-size:11px; color:var(--text-dim); line-height:1.5;">
+          • Asks follow-up questions when unsure (&lt; 95% confidence)<br>
+          • Mentions human support once per conversation (not repeatedly)<br>
+          • Routes operational questions to customer's own program admin<br>
+          • Reply length: <strong>Short</strong> (concise, conversational)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI INSTRUCTIONS -->
+  <div class="section-title" style="margin-top:32px; font-size:15px;">🧠 AI Agent Instructions (14 Published)</div>
+  <div class="section-desc">
+    These instructions shape how the AI behaves. Each targets messaging, email, or both channels.
+    <br><br>
+    <strong>Admin Links:</strong> 
+    <a href="https://timestudy.zendesk.com/admin/ai/ai-agents/ai-agents/" target="_blank" style="color:var(--accent-cyan); text-decoration:none;">AI Agents Dashboard</a> | 
+    <a href="https://timestudy.zendesk.com/admin/ai/ai-agents/ai-agents/01FW6Y2CX8HB4K3QZAF5HQYZN0/instructions" target="_blank" style="color:var(--accent-cyan); text-decoration:none;">Instructions</a> | 
+    <a href="https://timestudy.zendesk.com/admin/ai/ai-agents/ai-agents/01FW6Y2CX8HB4K3QZAF5HQYZN0/answers" target="_blank" style="color:var(--accent-cyan); text-decoration:none;">Answers / Flow</a>
+  </div>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap:8px;">
+    <div class="instruction-card">
+      <div class="inst-name">Email: Disclose AI + invite human follow-up</div>
+      <div class="inst-desc">In email responses, tells the customer this was generated from help center content. If not resolved, reply and a human will respond.</div>
+      <div><span class="inst-channel ch-email">📧 Email</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Don't generate if CS team already replied</div>
+      <div class="inst-desc">If Nikki, DeAnn, or Jeff already responded in the email thread, AI will not generate a duplicate response.</div>
+      <div><span class="inst-channel ch-email">📧 Email</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Don't reply to internal Time Study staff</div>
+      <div class="inst-desc">Requester with @timestudy.com domain → AI never sends a generative response.</div>
+      <div><span class="inst-channel ch-email">📧 Email</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">"I completed it" — say thanks</div>
+      <div class="inst-desc">If customer says "Done" or "I completed it," AI thanks them and tells them where to review their submitted time study.</div>
+      <div><span class="inst-channel ch-email">📧 Email</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Ask follow-up questions if unsure</div>
+      <div class="inst-desc">If less than 95% confident, AI may ask a follow-up question to clarify before responding.</div>
+      <div><span class="inst-channel ch-msg">💬 Messaging</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Ask for contact info if they need more help</div>
+      <div class="inst-desc">Always tells customer once (only once) they can leave name, email, org name for human follow-up.</div>
+      <div><span class="inst-channel ch-msg">💬 Messaging</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Always be polite and customer-centric</div>
+      <div class="inst-desc">20+ years of customer-centric experience baked into persona. Focus on fantastic customer satisfaction ratings.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Contact program admin for operational questions</div>
+      <div class="inst-desc">For "Which hours go where?" type questions → directs to org's own time study program administrator.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Deduplicate — don't re-answer same question</div>
+      <div class="inst-desc">Same person, same topic, same day → acknowledges receipt and says a human will follow up instead.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Permissions may vary by role</div>
+      <div class="inst-desc">If someone can't find something mentioned, explains their role might be customized differently. Offers human tech support.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Submit feedback to community forums</div>
+      <div class="inst-desc">Feature requests → directs to Community Forums where others can comment and vote on ideas.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Prioritize recent articles</div>
+      <div class="inst-desc">Favors recent articles and 'use_for_answerbot' tag. Deprioritizes "What's New" and 'no_index' articles.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">User Role awareness</div>
+      <div class="inst-desc">Answers for Reporters first, then explains Supporter/Admin perspective. Always specifies which role it's addressing.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+    <div class="instruction-card">
+      <div class="inst-name">Never say "click the help bubble" or "submit a ticket"</div>
+      <div class="inst-desc">Avoids circular self-referencing — never tells customers to use the support channel they're already using.</div>
+      <div><span class="inst-channel ch-both">📧💬 Both</span></div>
+    </div>
+  </div>
+
+  <!-- HUMAN TOUCHPOINTS -->
+  <div class="section-title" style="margin-top:32px; font-size:15px;">👤 Human Touchpoints Summary</div>
+  <div class="section-desc">Every stage of the support experience has a clear path to a real person.</div>
+
+  <div class="card-grid">
+    <div class="card human">
+      <div class="card-type"><span class="icon">👤</span> Human Touchpoint — First Contact</div>
+      <h4>AI Greeting Mentions Humans</h4>
+      <div class="card-detail">The very first message the customer sees says: "if I'm not able to quickly resolve your issue, I can share your message with our <strong>human support staff</strong>."</div>
+    </div>
+    <div class="card human">
+      <div class="card-type"><span class="icon">👤</span> Human Touchpoint — Every Email</div>
+      <h4>Email Responses Invite Reply</h4>
+      <div class="card-detail">Every AI-generated email explicitly says: "If we haven't resolved your concern, <strong>please reply</strong>, and a member of the Time Study Tech Support team will respond."</div>
+    </div>
+    <div class="card human">
+      <div class="card-type"><span class="icon">👤</span> Human Touchpoint — Agent Notification</div>
+      <h4>Tier 1 Agents See Every Ticket (Email & Async Channels)</h4>
+      <div class="card-detail">A trigger notifies <strong>all Tier 1 agents</strong> whenever a new ticket is created via email or async channels — nothing goes unreviewed, even if the AI resolved it. <em>Note: Generative AI messaging tickets are manually checked daily rather than generating a notification email.</em></div>
+    </div>
+    <div class="card human">
+      <div class="card-type"><span class="icon">👤</span> Human Touchpoint — Messaging Fallback</div>
+      <h4>Fallback → "Provide Your Contact Info"</h4>
+      <div class="card-detail">When the AI can't answer in messaging, it presents a button to <strong>leave contact information</strong> for a human to follow up directly.</div>
+    </div>
+    <div class="card human">
+      <div class="card-type"><span class="icon">👤</span> Human Touchpoint — Messaging On-Demand</div>
+      <h4>AI Offers Human Help Once Per Conversation</h4>
+      <div class="card-detail">In every messaging conversation, the AI mentions once that the customer can <strong>leave their info for the tech support team</strong> if they need more help.</div>
+    </div>
+    <div class="card human">
+      <div class="card-type"><span class="icon">👤</span> Human Touchpoint — Deduplication</div>
+      <h4>Repeat Questions → Human Follow-Up</h4>
+      <div class="card-detail">If the same person submits the same question twice in a day, the AI <strong>doesn't re-answer</strong> — it says a human will follow up.</div>
+    </div>
+  </div>
+
+  <!-- LEGACY FLOWS -->
+  <div class="section-title" style="margin-top:32px; font-size:15px;">📋 Conversation Flows</div>
+  <div class="section-desc">One active conversation flow remains from the pre-generative AI era. It serves as the messaging fallback human touchpoint.</div>
+
+  <div class="card-grid" style="max-width:700px;">
+    <div class="card human">
+      <div class="card-type"><span class="icon">📋</span> Active Conversation Flow</div>
+      <h4>"Click here to provide your contact information"</h4>
+      <div class="card-detail">
+        Mapped to the "request contact" intent. When the AI can't answer a messaging customer's question, this flow presents a button allowing them to leave their name, work email, and organization name for human follow-up. This is the primary escalation path from messaging to a human agent.
+      </div>
+    </div>
+  </div>
+
+  <!-- HELP CENTER AI SEARCH -->
+  <div class="section-title" style="margin-top:32px; font-size:15px;">🔍 Help Center AI Search</div>
+  <div class="section-desc">When users search the knowledge base, they get AI-powered quick answers alongside traditional article results. This feature doesn't create tickets — it's part of our self-serve support strategy using generative AI.</div>
+
+  <div class="card-grid" style="max-width:700px;">
+    <div class="card genai">
+      <div class="card-type"><span class="icon">🤖</span> Help Center Feature</div>
+      <h4>AI-Powered Search Results</h4>
+      <div class="card-detail">
+        When customers use the search box at <a href="https://support.timestudy.co/hc/en-us" target="_blank" style="color:var(--accent-cyan); text-decoration:none;">support.timestudy.co/hc/en-us</a>, they receive:<br><br>
+        <strong>1. AI Quick Answer:</strong> A generative AI response synthesized from Help Center articles<br>
+        <strong>2. Relevant Articles:</strong> Traditional search results showing matching knowledge base articles<br><br>
+        This provides immediate answers without creating a support ticket, while still giving users access to full documentation for deeper exploration.
+      </div>
+    </div>
+  </div>
+
+</div><!-- /channels -->
 <div class="section active" id="lifecycle">
   <div class="section-title">Ticket Lifecycle — End to End</div>
   <div class="section-desc">Walk through every stage of a ticket's life, from the moment it's created to final closure. Each card shows what fires, when, and what it does.</div>
@@ -567,7 +535,7 @@
             When an <strong>end-user</strong> submits a ticket via email, web form, or API, the AI agent sends an <strong>immediate auto-reply</strong> with suggested help center articles. Sets type to <strong>Question</strong>, priority to <strong>Normal</strong>, and a custom awaiting-reply status.
           </div>
           <div class="card-detail" style="margin-top:6px;">
-            <strong>Channels:</strong> Email to support@timestudy.co, web form, API
+            <strong>Channels:</strong> Email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="592a2c2929362b2d192d30343c2a2d2c3d20773a36">[email&#160;protected]</a>, web form, API
           </div>
         </div>
 
@@ -587,6 +555,14 @@
           </div>
         </div>
 
+
+        <div class="card human">
+          <div class="card-type"><span class="icon">👤</span> Human Touchpoint — AI Transparency</div>
+          <h4>AI Is Transparent &amp; Invites Human Follow-Up</h4>
+          <div class="card-detail">
+            The AI agent identifies itself as automated, generates responses from help center content, and <strong>every response</strong> (email and messaging) includes a clear path to a human agent. See the <strong>AI &amp; Channels</strong> tab for full details on channel-specific behavior and all 14 AI instructions.
+          </div>
+        </div>
       </div>
     </div>
 
@@ -821,18 +797,9 @@
 
         <div class="card csat">
           <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
-          <h4>Request Customer Satisfaction Rating (Legacy)</h4>
-          <div class="card-detail">
-            The original CSAT automation. <strong>24 hours</strong> after solve, sends a rating request. Excludes tickets tagged <code>no_csat</code>, <code>ab_resolved</code>, or already sent.
-          </div>
-          <div class="card-tags"><span class="tag">+ sent_csat_email</span></div>
-        </div>
-
-        <div class="card csat">
-          <div class="card-type"><span class="icon">⭐</span> Automation — 24 hours after solved</div>
           <h4>Request Customer Satisfaction Rating (System / New)</h4>
           <div class="card-detail">
-            Newer system CSAT automation. Fires at <strong>24 hours</strong> post-solve for public tickets where CSAT hasn't been offered. Excludes <code>ar_marked_helpful</code> and <code>no_csat</code> tags.
+            System CSAT automation. Fires at <strong>24 hours</strong> post-solve for public tickets where CSAT hasn't been offered. Excludes tickets tagged: <code>no_csat</code>, <code>ab_resolved</code>, <code>sent_csat_email</code>, <code>no_solve_notice</code>, or <code>ar_marked_helpful</code>.
           </div>
         </div>
 
@@ -955,7 +922,6 @@
 
 <!-- ============================================================ -->
 <!-- TAB: OVERVIEW -->
-<!-- ============================================================ -->
 <div class="section" id="overview">
   <div class="section-title">System Overview & Stats</div>
   <div class="section-desc">High-level summary of your Zendesk automation setup at Time Study.</div>
@@ -1069,7 +1035,12 @@
 <!-- ============================================================ -->
 <div class="section" id="triggers">
   <div class="section-title">All Active Triggers (14)</div>
-  <div class="section-desc">Triggers fire immediately when a ticket event occurs (creation, update, assignment change, etc.).</div>
+  <div class="section-desc">
+    Triggers fire immediately when a ticket event occurs (creation, update, assignment change, etc.).
+    <br><br>
+    <strong>Admin Link:</strong> 
+    <a href="https://timestudy.zendesk.com/admin/objects-rules/rules/triggers" target="_blank" style="color:var(--accent-cyan); text-decoration:none;">Manage Triggers in Zendesk</a>
+  </div>
 
   <div style="overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius);">
     <table class="rules-table">
@@ -1106,8 +1077,13 @@
 <!-- TAB: ALL AUTOMATIONS -->
 <!-- ============================================================ -->
 <div class="section" id="automations">
-  <div class="section-title">All Active Automations (16)</div>
-  <div class="section-desc">Automations run on a schedule, checking time-based conditions (hours pending, days since solved, etc.).</div>
+  <div class="section-title">All Active Automations (15)</div>
+  <div class="section-desc">
+    Automations run on a schedule, checking time-based conditions (hours pending, days since solved, etc.).
+    <br><br>
+    <strong>Admin Link:</strong> 
+    <a href="https://timestudy.zendesk.com/admin/objects-rules/rules/automations" target="_blank" style="color:var(--accent-cyan); text-decoration:none;">Manage Automations in Zendesk</a>
+  </div>
 
   <div style="overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius);">
     <table class="rules-table">
@@ -1128,15 +1104,14 @@
         <tr><td>5</td><td>Close ticket 5 days after solved</td><td>120 hrs solved</td><td>Set status → Closed</td></tr>
         <tr><td>6</td><td>Notify requester of resolution (standard)</td><td>4 biz hrs after solved</td><td>Email resolution notice + CSAT link</td></tr>
         <tr><td>7</td><td>Notify requester of resolution (sys admin)</td><td>20 hrs after solved</td><td>Email with admin escalation context</td></tr>
-        <tr><td>8</td><td>CSAT rating request (legacy)</td><td>24 hrs after solved</td><td>Email CSAT survey, mark offered</td></tr>
-        <tr><td>9</td><td>CSAT rating request (system/new)</td><td>24 hrs after solved</td><td>Email CSAT survey</td></tr>
-        <tr><td>10</td><td>Request to change bad rating</td><td>After bad_rating1 tag</td><td>Email re-rate invitation</td></tr>
-        <tr><td>11</td><td>Re-open on-hold before SLA breach</td><td>120 hrs on hold</td><td>Set Open, email assignee</td></tr>
-        <tr><td>12</td><td>Alert: tasks due within 1 biz day</td><td>&lt;4 biz hrs to due date</td><td>Email assignee, add t_reminder1</td></tr>
-        <tr><td>13</td><td>Alert: tasks due today</td><td>&lt;24 hrs to due date</td><td>Email assignee, add t_reminder2</td></tr>
-        <tr><td>14</td><td>Task needs due date</td><td>3 hrs after task created</td><td>Email assignee to set due date</td></tr>
-        <tr><td>15</td><td>[GenAI] Bump on autoreply</td><td>24 hrs, AI-replied pending</td><td>Email bump, tag, keep pending</td></tr>
-        <tr><td>16</td><td>[GenAI] Solve on autoreply</td><td>48 hrs, AI-replied + bumped</td><td>Email close notice, set Solved</td></tr>
+        <tr><td>8</td><td>CSAT rating request (system)</td><td>24 hrs after solved</td><td>Email CSAT survey (excludes: no_csat, ab_resolved, sent_csat_email, no_solve_notice, ar_marked_helpful)</td></tr>
+        <tr><td>9</td><td>Request to change bad rating</td><td>After bad_rating1 tag</td><td>Email re-rate invitation</td></tr>
+        <tr><td>10</td><td>Re-open on-hold before SLA breach</td><td>120 hrs on hold</td><td>Set Open, email assignee</td></tr>
+        <tr><td>11</td><td>Alert: tasks due within 1 biz day</td><td>&lt;4 biz hrs to due date</td><td>Email assignee, add t_reminder1</td></tr>
+        <tr><td>12</td><td>Alert: tasks due today</td><td>&lt;24 hrs to due date</td><td>Email assignee, add t_reminder2</td></tr>
+        <tr><td>13</td><td>Task needs due date</td><td>3 hrs after task created</td><td>Email assignee to set due date</td></tr>
+        <tr><td>14</td><td>[GenAI] Bump on autoreply</td><td>24 hrs, AI-replied pending</td><td>Email bump, tag, keep pending</td></tr>
+        <tr><td>15</td><td>[GenAI] Solve on autoreply</td><td>48 hrs, AI-replied + bumped</td><td>Email close notice, set Solved</td></tr>
         <tr><td>—</td><td><em>AnswerBot resolved follow-up</em></td><td>2 hrs after solved (ar_marked_helpful)</td><td>Email "reply if need more help"</td></tr>
         <tr><td>—</td><td><em>Close chat ticket</em></td><td>8 biz hrs after solved (chat_close)</td><td>Set status → Closed</td></tr>
       </tbody>
@@ -1144,15 +1119,7 @@
   </div>
 </div><!-- /automations -->
 
+
 </div><!-- /content -->
 
-<script>
-function showTab(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
-}
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-s
